@@ -6,7 +6,16 @@ gem 'rails', '3.2.19'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'cancancan', '~> 1.9'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
+group :development do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -21,8 +21,13 @@
      border: 1px solid black;
  }
 
- div{
+ div {
   height: 50px;
   width: 50px;
  }
 
+/* body {
+     background-image: url('polka-10-10.png');
+     background-repeat: repeat-x-y;
+ }
+*/

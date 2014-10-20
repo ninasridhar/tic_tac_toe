@@ -8,4 +8,5 @@ class GamesController < ApplicationController
     game.player1 = player1
     game.player2 = player2
   end
+
 end
