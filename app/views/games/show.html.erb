@@ -1,19 +1,17 @@
 <table >
   <tr>
-    <td><a href="/games/moves"><div id = "a1"></div></a></td>
-    <td><a href="/games/moves"><div id = "a2"></div></a></td>
-    <td><a href="/games/moves"><div id = "a3"></div></a></td>
+    <td><%= link_to new_game_move_path(@game, move: 0) do %><div></div><% end %></td>
+    <td><%= link_to new_game_move_path(@game, move: 1) do %><div></div><% end %></td>
+    <td><%= link_to new_game_move_path(@game, move: 2) do %><div></div><% end %></td>
   </tr>
   <tr>
-    <td><a href="/games/moves"><div id = "b1"></div></a></td>
-    <td><a href="/games/moves"><div id = "b2"></div></a></td>
-    <td><a href="/games/moves"><div id = "b3"></div></a></td>
+    <td><%= link_to new_game_move_path(@game, move: 3) do %><div></div><% end %></td>
+    <td><%= link_to new_game_move_path(@game, move: 4) do %><div></div><% end %></td>
+    <td><%= link_to new_game_move_path(@game, move: 5) do %><div></div><% end %></td>
   </tr>
   <tr>
-    <td><a href="/games/moves"><div id = "c1"></div></a></td>
-    <td><a href="/games/moves"><div id = "c2"></div></a></td>
-    <td><a href="/games/moves"><div id = "c3"></div></a></td>
+    <td><%= link_to new_game_move_path(@game, move: 6) do %><div></div><% end %></td>
+    <td><%= link_to new_game_move_path(@game, move: 7) do %><div></div><% end %></td>
+    <td><%= link_to new_game_move_path(@game, move: 8) do %><div></div><% end %></td>
   </tr>
 </table>
-
-

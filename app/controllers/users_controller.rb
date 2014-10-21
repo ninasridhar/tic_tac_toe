@@ -4,14 +4,12 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-
 
   end
 
@@ -20,7 +18,6 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-end
 
   # GET /users/1/edit
   def edit
@@ -67,3 +64,4 @@ end
       format.json { head :no_content }
     end
   end
+end

@@ -8,6 +8,8 @@ gem 'rails', '3.2.19'
 gem 'pg'
 gem 'cancancan', '~> 1.9'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'carrierwave', '0.9.0'
+gem 'rmagick'
 
 group :development do
   gem 'pry-rails'

@@ -43,6 +43,10 @@ GEM
       slop (~> 3.6)
     callsite (0.0.11)
     cancancan (1.9.2)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
     coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -111,6 +115,7 @@ GEM
     rake (10.3.2)
     rdoc (3.12.2)
       json (~> 1.4)
+    rmagick (2.13.3)
     sass (3.4.6)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -140,6 +145,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   cancancan (~> 1.9)
+  carrierwave (= 0.9.0)
   coffee-rails (~> 3.2.1)
   jquery-rails
   meta_request
@@ -147,5 +153,6 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   rails (= 3.2.19)
+  rmagick
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
