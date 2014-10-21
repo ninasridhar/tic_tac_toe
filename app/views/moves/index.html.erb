@@ -1,10 +1,12 @@
-<h1>Listing albums</h1>
+<h1>Listing Moves</h1>
 
 
 
 <% @moves.each do |move| %>
   <tr>
     <td><%= move.move %></td>
+    <td><%= move.player_id %></td>
+    <td><%= move.game_id %></td>
     <td><%= link_to 'Show', [move.game, move] %></td>
     
     <td><%= link_to 'Destroy', [move.game, move], method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -8,8 +8,19 @@ class User < ActiveRecord::Base
   has_many :games
   has_many :moves
 
-  def role?(role_to_compare)
-    self.role.to_s == role_to_compare.to_s
-  end
+  # def role?(role_to_compare)
+  #   self.role.to_s == role_to_compare.to_s
+  # end
+
+
+  # def turn(player, taken_squares)
+  #   player_move = params[:move].to_i
+
+  #   if position_taken?
+  #     player_move = params[:move].to_i
+  #   end
+    # @moves << player_move
+    # taken_squares << player_move
+  
 
 end

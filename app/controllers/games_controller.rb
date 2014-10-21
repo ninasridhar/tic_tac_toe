@@ -13,6 +13,7 @@ class GamesController < ApplicationController
     # GET /users/1.json
     def show
       @game = Game.find(params[:id])
+      @board = @game.build_board
       respond_to do |format|
         format.html # show.html.erb
         format.json { render json: @game }
@@ -23,10 +24,10 @@ class GamesController < ApplicationController
     # GET /users/new.json
     def new
       @game = Game.new
-      respond_to do |format|
-        format.html # new.html.erb
-        format.json { render json: @game }
-      end
+      # respond_to do |format|
+      #   format.html # new.html.erb
+      #   format.json { render json: @game }
+      # end
     end
 
     # GET /users/1/edit
@@ -38,7 +39,7 @@ class GamesController < ApplicationController
     # POST /users.json
     def create
       @game = Game.new(params[:game])
-      @game.player1_id = current_user.id
+      @game.player1 = current_user
 
       respond_to do |format|
         if @game.save
