@@ -1,26 +1,24 @@
-<%= form_for(@move) do |f| %>
-  <% if @move.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@move.errors.count, "error") %> prohibited this move from being saved:</h2>
+<%= form_for([@move.game, @move]) do |f| %>
+<% if @move.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@move.errors.count, "error") %> prohibited this move from being saved:</h2>
 
-      <ul>
-      <% @move.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :move %><br />
-    <%= f.text_field :move %>
-  </div>
-  <div class="field">
-    <%= f.label :player_id %><br />
-   <%= f.text_field :player_id %><br />
+  <ul>
+    <% @move.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
     <% end %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </ul>
+</div>
+<% end %>
+
+
+<div class="field">
+  <%= f.label :player_id %><br />
+  <%= f.text_field :player_id %><br />
+
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
 

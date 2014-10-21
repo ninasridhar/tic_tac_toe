@@ -24,8 +24,7 @@ ActiveRecord::Schema.define(:version => 20141020090404) do
   create_table "moves", :force => true do |t|
     t.integer  "game_id"
     t.integer  "player_id"
-    t.integer  "row"
-    t.integer  "column"
+    t.integer  "move"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

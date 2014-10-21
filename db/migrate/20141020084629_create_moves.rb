@@ -3,8 +3,7 @@ class CreateMoves < ActiveRecord::Migration
     create_table :moves do |t|
       t.integer :game_id
       t.integer :player_id
-      t.integer :row
-      t.integer :column
+      t.integer :move
 
       t.timestamps
     end
