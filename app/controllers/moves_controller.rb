@@ -45,7 +45,7 @@ class MovesController < ApplicationController
     @move = game.moves.create(params[:move])
     # @move.player_id = current_user.id
     # @move.game_id = params[:id]
-    
+    #@is_the_square_free = @move.position_taken?
     
     respond_to do |format|
       if @move.save

@@ -14,6 +14,10 @@ class GamesController < ApplicationController
     def show
       @game = Game.find(params[:id])
       @board = @game.build_board
+      @game_winner = @game.game_winner
+      @last_player = @game.last_player
+
+      @result = @game.draw
       respond_to do |format|
         format.html # show.html.erb
         format.json { render json: @game }
@@ -80,4 +84,6 @@ class GamesController < ApplicationController
         format.json { head :no_content }
       end
     end
+
+    
   end

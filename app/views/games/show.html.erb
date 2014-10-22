@@ -2,21 +2,31 @@
 <p>Player 2: <%= @game.player2.username %></p>
 
 <%= @board.inspect %>
+<% if (@game.winner != nil) %>
+<%= @game.winner.username %>
+<% end %>
+<%#= @game_winner%>
+<%= @last_player.inspect %>
+<%= @result.inspect %>
+<meta http-equiv="refresh" content="5">
 
-<table >
-  <tr>
-    <td><%= link_to new_game_move_path(@game, move: 0) do %><div><%= @board[0] %></div><% end %></td>
-    <td><%= link_to new_game_move_path(@game, move: 1) do %><div><%= @board[1] %></div><% end %></td>
-    <td><%= link_to new_game_move_path(@game, move: 2) do %><div><%= @board[2] %></div><% end %></td>
-  </tr>
-  <tr>
-    <td><%= link_to new_game_move_path(@game, move: 3) do %><div><%= @board[3] %></div><% end %></td>
-    <td><%= link_to new_game_move_path(@game, move: 4) do %><div><%= @board[4] %></div><% end %></td>
-    <td><%= link_to new_game_move_path(@game, move: 5) do %><div><%= @board[5] %></div><% end %></td>
-  </tr>
-  <tr>
-    <td><%= link_to new_game_move_path(@game, move: 6) do %><div><%= @board[6] %></div><% end %></td>
-    <td><%= link_to new_game_move_path(@game, move: 7) do %><div><%= @board[7] %></div><% end %></td>
-    <td><%= link_to new_game_move_path(@game, move: 8) do %><div><%= @board[8] %></div><% end %></td>
-  </tr>
-</table>
+<div class = 'board'>
+  <% @board.each_with_index do |move, square_id| %>
+
+  <% if move == 'X' %>
+  <%= image_tag('x.png', class: "letter") %>
+  <% elsif move == 'O' %>
+  <%= image_tag('o.png', class: "letter") %>
+  <% else %> 
+
+  <% if current_user.id != @last_player %>
+    <%= link_to new_game_move_path(@game, move: square_id) do %>
+    <div class = 'letter'></div>
+    <% end %>
+  <% else %>
+    <div class = 'letter'></div>
+  <% end %>
+
+  <% end %>
+  <% end %>
+</div>
