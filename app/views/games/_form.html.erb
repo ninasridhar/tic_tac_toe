@@ -1,3 +1,5 @@
+
+
 <%= form_for(@game) do |f| %>
 <% if @game.errors.any? %>
 <div id="error_explanation">
@@ -11,7 +13,7 @@
 </div>
 <% end %>
 
-<h2> Pick your opponent: </h2>
+<h2> Pick your opponent! </h2>
 
 <%= f.collection_select( :player2_id , User.all.collect, :id, :username, :prompt => true) %>
 

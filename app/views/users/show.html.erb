@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-
 <p><%= link_to 'Edit Profile', edit_user_path(@user) %></p>
 
 <div class = 'user_info'>
 
 <p>
   <b>Username:</b>
+  <br>
   <%= @user.username %>
 </p>
 
@@ -16,6 +16,7 @@
 
 <p>
   <b>Email:</b>
+  <br>
   <%= @user.email %>
 </p>
 </div>

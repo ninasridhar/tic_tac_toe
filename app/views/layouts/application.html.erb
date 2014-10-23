@@ -15,11 +15,16 @@
   </header>
   <div class = 'nav_line'></div>
   <nav>
+    <% if current_user == nil %>
     <%= link_to('Register', new_user_path)%> 
     <%= link_to('Log In', new_session_path)%> 
+    <% end %>
+    <%= link_to('Players', users_path)%> 
+    <% if current_user != nil %>
     <%= link_to('Profile', current_user)%> 
     <%= link_to('Play', new_game_path)%> 
     <%= link_to('Log Out', logout_path) %>
+    <% end %>
   </nav>
   <div class = 'main'>
   <div class= 'flash_message'>

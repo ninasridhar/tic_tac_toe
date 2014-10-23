@@ -16,7 +16,9 @@
 </div>
 
 <% if (@game.game_over? == false) %>
-  <meta http-equiv="refresh" content="1">
+  <% if current_user.id == @last_player %> 
+  <meta http-equiv="refresh" content="0.001">
+  <% end %>
 <% end %>
 
 <div class = 'board'>

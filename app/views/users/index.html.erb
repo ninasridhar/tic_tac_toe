@@ -1,7 +1,14 @@
+<div class = 'middle'>
 <h2>Users</h2>
+<p>
   <% @users.each do |user| %>
-    <%= user.email %> 
-    <%= user.password_digest %> 
+    <br>
+    <br>
+    <%=image_tag user.photo %> 
+    <%= user.username %> 
     <br>
   <% end %>
   <br>
+  <br>
+</p>
+</div>

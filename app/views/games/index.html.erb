@@ -1,4 +1,5 @@
-<%= link_to('Play', new_game_path)%>
+
+<div class = 'middle'>
 
 <h2>Listing Games</h2>
 
@@ -16,8 +17,11 @@
     <td><%= link_to 'Show', game %></td>
     
     <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <br>
   </tr>
 <% end %>
 </table>
 
 <br />
+
+</div>
