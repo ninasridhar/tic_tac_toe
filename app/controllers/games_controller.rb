@@ -1,4 +1,4 @@
-class GamesController < ApplicationController
+  class GamesController < ApplicationController
     # GET /users
     # GET /users.json
     def index
@@ -13,6 +13,8 @@ class GamesController < ApplicationController
     # GET /users/1.json
     def show
       @game = Game.find(params[:id])
+
+      # my own methods
       @board = @game.build_board
       @game_winner = @game.game_winner
       @last_player = @game.last_player
@@ -47,8 +49,6 @@ class GamesController < ApplicationController
     def create
       @game = Game.new(params[:game])
       @game.player1 = current_user
-    
-
 
       respond_to do |format|
         if @game.save
@@ -60,7 +60,7 @@ class GamesController < ApplicationController
         end
       end
     end
-  
+
 
     # PUT /users/1
     # PUT /users/1.json
@@ -89,8 +89,4 @@ class GamesController < ApplicationController
         format.json { head :no_content }
       end
     end
-
-
-
-    
   end

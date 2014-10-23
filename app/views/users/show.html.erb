@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<% if current_user.id == @user.id %>
 <p><%= link_to 'Edit Profile', edit_user_path(@user) %></p>
-
+<% end %>
 <div class = 'user_info'>
 
 <p>
