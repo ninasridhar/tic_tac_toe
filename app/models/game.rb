@@ -85,7 +85,7 @@ class Game < ActiveRecord::Base
       index = [0, 1, 2, 3, 4, 5, 6, 7, 8]
       number = index.sample
       @board[number]
-      if (@board[number] == nil)
+      if (@board_number == nil)
         Move.create(player_id: 1, game_id: self.id, move: number)
       end
     end

@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(:version => 20141023084337) do
   create_table "games", :force => true do |t|
     t.integer  "player1_id"
     t.integer  "player2_id"
-    t.integer  "winner"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
