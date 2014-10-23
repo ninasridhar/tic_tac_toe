@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :photo, :username, :games
   has_secure_password
 
+  mount_uploader :photo, PhotoUploader
+
   validates :password, presence: true, on: :create
   validates :email, presence: :true, uniqueness: {case_sensitive: false}
 

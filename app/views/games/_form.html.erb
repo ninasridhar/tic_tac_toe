@@ -11,9 +11,9 @@
 </div>
 <% end %>
 
-<%= f.label :player2_id %>
-<%= f.collection_select( :player2_id , User.all.collect, :id, :username, :prompt => true) %>
+<h2> Pick your opponent: </h2>
 
+<%= f.collection_select( :player2_id , User.all.collect, :id, :username, :prompt => true) %>
 
 
 <div class="actions">

@@ -1,37 +1,42 @@
-<p>Player 1: <%= @game.player1.username %></p>
-<% if (@game.player2 != nil) %>
-<p>Player 2: <%= @game.player2.username %></p>
-<% end %>
-<%#= @board.inspect %>
-<% if (@game.winner != nil) %>
-<h2><%= @game.winner.username %> wins!!!!</h2>
-<% end %>
+<div class = 'game_players'>
+  <p><%= image_tag('super.png', class: 'superhero')%><br>Player 1: <%= @game.player1.username %></p>
+  <% if (@game.player2 != nil) %>
+    <p><%= image_tag('bat.png' , class: 'superhero')%><br>Player 2: <%= @game.player2.username %></p>
+  <% end %>
+</div>
 
-<% if (@result != nil) %>
-<h2><%= @result %></h2>
-<% end %>
+<div class = 'result'>
+  <% if (@game.winner != nil) %>
+    <h3><%= @game.winner.username %> wins!!!!</h3>
+  <% end %>
+
+  <% if (@result != nil) %>
+    <h3><%= @result %></h3>
+  <% end %>
+</div>
 
 <% if (@game.game_over? == false) %>
-<meta http-equiv="refresh" content="1">
+  <meta http-equiv="refresh" content="1">
 <% end %>
 
 <div class = 'board'>
   <% @board.each_with_index do |move, square_id| %>
-
-  <% if move == 'X' %>
-  <%= image_tag('x.png', class: "letter") %>
-  <% elsif move == 'O' %>
-  <%= image_tag('o.png', class: "letter") %>
-  <% else %> 
-
-  <% if current_user.id != @last_player %>
-    <%= link_to new_game_move_path(@game, move: square_id) do %>
-    <div class = 'letter'></div>
+    <% if move == 'X' %>
+      <%= image_tag('superman.png', class: "letter") %>
+    <% elsif move == 'O' %>
+      <%= image_tag('batman.png', class: "letter") %>
+    <% else %> 
+      <% if (@game.game_over? == false) %> 
+        <% if current_user.id != @last_player %>
+          <%= link_to new_game_move_path(@game, move: square_id) do %>
+            <div class = 'letter'></div>
+          <% end %>
+        <% else %>
+          <div class = 'letter'></div>
+        <% end %>
+      <% else %>
+        <div class = 'letter'></div>
+      <% end %>
     <% end %>
-  <% else %>
-    <div class = 'letter'></div>
-  <% end %>
-
-  <% end %>
   <% end %>
 </div>

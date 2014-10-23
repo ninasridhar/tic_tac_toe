@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://lea.verou.me/css3patterns/#polka-dot -->
+<html class=" -webkit-"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta charset="utf-8">
+<title>CSS3 Patterns Gallery</title>
+<style media="" data-href="style.css">* {
+	margin:0;
+	padding:0;
+}
+
+html {
+	height:100%;
+}
+
+body {
+	min-height:100%;
+	padding:0 2.5em;
+	font-family: Palatino, 'Palatino Linotype', serif;
+	background: #e8eff5 url("http://lea.verou.me/css3patterns/noise.png");
+	box-sizing: border-box;
+}
+
+h1, h2 {
+	padding-top:.2em;
+	color:#e50;
+	text-shadow: 0 2px white;
+}
+
+h1 {
+	text-align:center;
+	font-size:500%;
+}
+
+a {
+	color:inherit;
+	text-decoration:none;
+}
+
+body > p,
+body > ul {
+	margin:1em 0;
+	line-height:1.5;
+}
+
+h2,
+p,
+ul:not(#patterns) {
+	text-shadow: 0 1px white;
+}
+
+body[style] > h2,
+body[style] > p,
+body[style] > ul:not(#patterns) {
+	display:none;
+}
+
+h2 + p,
+p + ul {
+	margin-top:.3em;
+}
+
+body > ul > li > a,
+body > p > a {
+	border-bottom:2px dotted white;
+}
+
+body > ul > li > a:hover,
+body > p > a:hover {
+	border-bottom-color:slategray;
+}
+
+#help {
+	text-align: center;
+}
+
+	#help > li {
+		display:inline;
+		list-style:none;
+		text-shadow: 0 1px white;
+	}
+	
+	#help > li + li:before {
+		content: '● ';
+		opacity:.4;
+	}
+
+#patterns {
+	
+}
+
+#patterns:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+
+	#patterns > li {
+		position:relative;
+		width: 300px;
+		height:300px;
+		margin:40px;
+		float:left;
+		list-style:none;
+	}
+	
+	#patterns > li:not(:target) {
+		cursor:pointer;
+		background-color:gray;
+		border-radius: 150px;
+		box-shadow: -3px -3px 10px 2px rgba(0,0,0,.3) inset,
+					0 0 0 15px rgba(255, 255, 255, .6) inset,
+					0 0 0 1px rgba(0,0,0,.5),
+					2px 2px 10px rgba(0,0,0,.6);
+		/* Overrride for Webkit bug */
+		-webkit-box-shadow: 0 0 0 15px rgba(255, 255, 255, .6) inset,
+					0 0 0 1px rgba(0,0,0,.5),
+					2px 2px 10px rgba(0,0,0,.6);
+	}
+	
+	#patterns > li:target {
+		background: none !important;
+	}
+	
+	body[style] #patterns > li:not(:target) {
+		display:none;
+	}
+	
+		#patterns > li > div {
+			position:absolute;
+			top:235px;
+			left:55px;
+			width:250px;
+			z-index:2;
+			padding:3px 10px 5px;
+			color:#e50;
+			color: hsla(20,100%,50%,.94);
+			font-size:90%;
+			background:currentColor;
+			box-shadow: 2px 2px 10px rgba(0,0,0,.5);
+		}
+		
+		#patterns > li:target > div {
+			position:fixed;
+			top:auto;
+			left:20px;
+			right:20px;
+			bottom:20px;
+			z-index:3;
+			width:auto;
+			padding:10px;
+			font-size:200%;
+		}
+		
+		#patterns > li > div:after {
+			content: "";
+			position:absolute;
+			top:-30px;
+			left:30px;
+			border:15px solid transparent;
+			border-bottom-color:currentColor;
+			border-left-width:0;
+		}
+		
+		#patterns > li:target > div:after {
+			border-width:30px;
+			border-left-width:0;
+			top:-60px;
+			left:60px;
+		}
+		
+			#patterns > li h2,
+			#patterns > li p,
+			#patterns > li textarea {
+				color:white;
+				text-shadow: .05em .05em .1em rgba(0,0,0,.4);
+			}
+			
+			#patterns > li h2 {
+				font-size:140%;
+			}
+			
+			#patterns > li:target h2 {
+				float: left;
+				margin-bottom: .3em;
+			}
+			
+			#patterns > li .bytesize {
+				font-weight:normal;
+				opacity:.7;
+			}
+			
+			#patterns > li p {
+				font-size:85%;
+				line-height:1.8;
+				opacity:.7;
+				text-shadow: none;
+			}
+			
+			#patterns > li:target p {
+				float: right;
+			}
+			
+			#patterns > li textarea {
+				display:none;
+				width:100%;
+				color:white;
+				background: #333538;
+				padding: .5em;
+				border:0;
+				font-family: Consolas, Monaco, 'Andale Mono', monospace;
+				resize:vertical;
+				box-sizing: border-box;
+				box-shadow: 1px 1px 10px black inset;
+				border-radius: 1px; /* Opera bug fix */
+			}
+			
+			#patterns > li:target textarea {
+				display:block;
+			}
+			
+			#patterns > li .close {
+				display:none;
+				position:absolute;
+				top:-.5em;
+				right:-.5em;
+				width:1.5em;
+				line-height:1.5;
+				height:1.5em;
+				border: .2em solid white;
+				font-size:80%;
+				color:white;
+				background: rgba(20,20,20,.7);
+				text-align:center;
+				text-shadow: 1px 1px 3px black;
+				border-radius:1em;
+				box-shadow: 1px 1px 5px rgba(0,0,0,.5);
+			}
+			
+			#patterns > li .close:hover {
+				background:black;
+			}
+			
+			#patterns > li:target .close {
+				display:block;
+			}
+			
+#social {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+}
+
+	#social iframe {
+		margin-top: .5em;
+	}
+			
+#footer {
+	clear:both;
+	text-align:center;
+	padding:.5em;
+	border-top:1px solid rgba(0,0,0,.3);
+	text-shadow: 0 1px white;
+}</style>
+
+<style>
+textarea[data-size="40"] { font-size: 40%; }
+textarea[data-size="41"] { font-size: 41%; }
+textarea[data-size="42"] { font-size: 42%; }
+textarea[data-size="43"] { font-size: 43%; }
+textarea[data-size="44"] { font-size: 44%; }
+textarea[data-size="45"] { font-size: 45%; }
+textarea[data-size="46"] { font-size: 46%; }
+textarea[data-size="47"] { font-size: 47%; }
+textarea[data-size="48"] { font-size: 48%; }
+textarea[data-size="49"] { font-size: 49%; }
+textarea[data-size="50"] { font-size: 50%; }
+textarea[data-size="51"] { font-size: 51%; }
+textarea[data-size="52"] { font-size: 52%; }
+textarea[data-size="53"] { font-size: 53%; }
+textarea[data-size="54"] { font-size: 54%; }
+textarea[data-size="55"] { font-size: 55%; }
+textarea[data-size="56"] { font-size: 56%; }
+textarea[data-size="57"] { font-size: 57%; }
+textarea[data-size="58"] { font-size: 58%; }
+textarea[data-size="59"] { font-size: 59%; }
+textarea[data-size="60"] { font-size: 60%; }
+textarea[data-size="61"] { font-size: 61%; }
+textarea[data-size="62"] { font-size: 62%; }
+textarea[data-size="63"] { font-size: 63%; }
+textarea[data-size="64"] { font-size: 64%; }
+textarea[data-size="65"] { font-size: 65%; }
+textarea[data-size="66"] { font-size: 66%; }
+textarea[data-size="67"] { font-size: 67%; }
+textarea[data-size="68"] { font-size: 68%; }
+textarea[data-size="69"] { font-size: 69%; }
+textarea[data-size="70"] { font-size: 70%; }
+textarea[data-size="71"] { font-size: 71%; }
+textarea[data-size="72"] { font-size: 72%; }
+textarea[data-size="73"] { font-size: 73%; }
+textarea[data-size="74"] { font-size: 74%; }
+textarea[data-size="75"] { font-size: 75%; }
+textarea[data-size="76"] { font-size: 76%; }
+textarea[data-size="77"] { font-size: 77%; }
+textarea[data-size="78"] { font-size: 78%; }
+textarea[data-size="79"] { font-size: 79%; }
+textarea[data-size="80"] { font-size: 80%; }
+textarea[data-size="81"] { font-size: 81%; }
+textarea[data-size="82"] { font-size: 82%; }
+textarea[data-size="83"] { font-size: 83%; }
+textarea[data-size="84"] { font-size: 84%; }
+textarea[data-size="85"] { font-size: 85%; }
+textarea[data-size="86"] { font-size: 86%; }
+textarea[data-size="87"] { font-size: 87%; }
+textarea[data-size="88"] { font-size: 88%; }
+textarea[data-size="89"] { font-size: 89%; }
+textarea[data-size="90"] { font-size: 90%; }
+textarea[data-size="91"] { font-size: 91%; }
+textarea[data-size="92"] { font-size: 92%; }
+textarea[data-size="93"] { font-size: 93%; }
+textarea[data-size="94"] { font-size: 94%; }
+textarea[data-size="95"] { font-size: 95%; }
+textarea[data-size="96"] { font-size: 96%; }
+textarea[data-size="97"] { font-size: 97%; }
+textarea[data-size="98"] { font-size: 98%; }
+textarea[data-size="99"] { font-size: 99%; }
+textarea[data-size="100"] { font-size: 100%; }
+textarea[data-size="101"] { font-size: 101%; }
+textarea[data-size="102"] { font-size: 102%; }
+textarea[data-size="103"] { font-size: 103%; }
+textarea[data-size="104"] { font-size: 104%; }
+textarea[data-size="105"] { font-size: 105%; }
+textarea[data-size="106"] { font-size: 106%; }
+textarea[data-size="107"] { font-size: 107%; }
+textarea[data-size="108"] { font-size: 108%; }
+textarea[data-size="109"] { font-size: 109%; }
+textarea[data-size="110"] { font-size: 110%; }
+textarea[data-size="111"] { font-size: 111%; }
+textarea[data-size="112"] { font-size: 112%; }
+textarea[data-size="113"] { font-size: 113%; }
+textarea[data-size="114"] { font-size: 114%; }
+textarea[data-size="115"] { font-size: 115%; }
+textarea[data-size="116"] { font-size: 116%; }
+textarea[data-size="117"] { font-size: 117%; }
+textarea[data-size="118"] { font-size: 118%; }
+textarea[data-size="119"] { font-size: 119%; }
+textarea[data-size="120"] { font-size: 120%; }
+textarea[data-size="121"] { font-size: 121%; }
+textarea[data-size="122"] { font-size: 122%; }
+textarea[data-size="123"] { font-size: 123%; }
+textarea[data-size="124"] { font-size: 124%; }
+textarea[data-size="125"] { font-size: 125%; }
+textarea[data-size="126"] { font-size: 126%; }
+textarea[data-size="127"] { font-size: 127%; }
+textarea[data-size="128"] { font-size: 128%; }
+textarea[data-size="129"] { font-size: 129%; }
+textarea[data-size="130"] { font-size: 130%; }
+textarea[data-size="131"] { font-size: 131%; }
+textarea[data-size="132"] { font-size: 132%; }
+textarea[data-size="133"] { font-size: 133%; }
+textarea[data-size="134"] { font-size: 134%; }
+textarea[data-size="135"] { font-size: 135%; }
+textarea[data-size="136"] { font-size: 136%; }
+textarea[data-size="137"] { font-size: 137%; }
+textarea[data-size="138"] { font-size: 138%; }
+textarea[data-size="139"] { font-size: 139%; }
+textarea[data-size="140"] { font-size: 140%; }
+textarea[data-size="141"] { font-size: 141%; }
+textarea[data-size="142"] { font-size: 142%; }
+textarea[data-size="143"] { font-size: 143%; }
+textarea[data-size="144"] { font-size: 144%; }
+textarea[data-size="145"] { font-size: 145%; }
+textarea[data-size="146"] { font-size: 146%; }
+textarea[data-size="147"] { font-size: 147%; }
+textarea[data-size="148"] { font-size: 148%; }
+textarea[data-size="149"] { font-size: 149%; }
+textarea[data-size="150"] { font-size: 150%; }
+textarea[data-size="151"] { font-size: 151%; }
+textarea[data-size="152"] { font-size: 152%; }
+textarea[data-size="153"] { font-size: 153%; }
+textarea[data-size="154"] { font-size: 154%; }
+textarea[data-size="155"] { font-size: 155%; }
+textarea[data-size="156"] { font-size: 156%; }
+textarea[data-size="157"] { font-size: 157%; }
+textarea[data-size="158"] { font-size: 158%; }
+textarea[data-size="159"] { font-size: 159%; }
+textarea[data-size="160"] { font-size: 160%; }
+textarea[data-size="161"] { font-size: 161%; }
+textarea[data-size="162"] { font-size: 162%; }
+textarea[data-size="163"] { font-size: 163%; }
+textarea[data-size="164"] { font-size: 164%; }
+textarea[data-size="165"] { font-size: 165%; }
+textarea[data-size="166"] { font-size: 166%; }
+textarea[data-size="167"] { font-size: 167%; }
+textarea[data-size="168"] { font-size: 168%; }
+textarea[data-size="169"] { font-size: 169%; }
+textarea[data-size="170"] { font-size: 170%; }
+textarea[data-size="171"] { font-size: 171%; }
+textarea[data-size="172"] { font-size: 172%; }
+textarea[data-size="173"] { font-size: 173%; }
+textarea[data-size="174"] { font-size: 174%; }
+textarea[data-size="175"] { font-size: 175%; }
+textarea[data-size="176"] { font-size: 176%; }
+textarea[data-size="177"] { font-size: 177%; }
+textarea[data-size="178"] { font-size: 178%; }
+textarea[data-size="179"] { font-size: 179%; }
+textarea[data-size="180"] { font-size: 180%; }
+textarea[data-size="181"] { font-size: 181%; }
+textarea[data-size="182"] { font-size: 182%; }
+textarea[data-size="183"] { font-size: 183%; }
+textarea[data-size="184"] { font-size: 184%; }
+textarea[data-size="185"] { font-size: 185%; }
+textarea[data-size="186"] { font-size: 186%; }
+textarea[data-size="187"] { font-size: 187%; }
+textarea[data-size="188"] { font-size: 188%; }
+textarea[data-size="189"] { font-size: 189%; }
+textarea[data-size="190"] { font-size: 190%; }
+textarea[data-size="191"] { font-size: 191%; }
+textarea[data-size="192"] { font-size: 192%; }
+textarea[data-size="193"] { font-size: 193%; }
+textarea[data-size="194"] { font-size: 194%; }
+textarea[data-size="195"] { font-size: 195%; }
+textarea[data-size="196"] { font-size: 196%; }
+textarea[data-size="197"] { font-size: 197%; }
+textarea[data-size="198"] { font-size: 198%; }
+textarea[data-size="199"] { font-size: 199%; }
+textarea[data-size="200"] { font-size: 200%; }</style></head>
+<body data-twttr-rendered="true" style="; background-color:white;
+background-image: radial-gradient(rgb(218, 219, 222) 15%, transparent 16%),
+radial-gradient(rgb(218, 219, 222) 15%, transparent 16%);
+background-size:10px 10px;
+background-position: 0 0, 25px 25px;">
+
+<h1>CSS3 Patterns Gallery</h1>
+<div id="social">
+	<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./CSS3 Patterns Gallery_files/tweet_button.d4db41a5a14a4516e6d4ecf6250c7419.en.html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 109px; height: 20px;"></iframe>
+	<script id="twitter-wjs" src="./CSS3 Patterns Gallery_files/widgets.js"></script><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	<iframe src="./CSS3 Patterns Gallery_files/like.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowtransparency="true"></iframe>
+</div>
+<ul id="help">
+	<li>Click on a pattern to expand</li>
+	<li>Textareas are editable</li>
+	<li><a href="http://lea.verou.me/css3patterns/#browser-support">Browser support</a></li>
+	<li><a href="http://lea.verou.me/css3patterns/#new-submissions">Submit a new one</a></li>
+	<li><a href="https://github.com/LeaVerou/CSS3-Patterns-Gallery">Github repo</a></li>
+	<li>Enjoy!</li>
+</ul>
+<ul id="patterns">
+	<li title="Microbial Mat" data-author="Logan McBroom" data-author-url="http://logan.mcbroom.me" id="microbial-mat" data-originalstyle="background:
+radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+radial-gradient(at 100% 100%,     rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px),
+#8a3;
+background-size: 20px 20px;" data-originalcsstext="background: radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, rgb(102, 17, 51) 10px, rgba(96, 16, 48, 0) 11px) 0px 10px / 20px 20px, radial-gradient(at 100% 100%, rgba(96, 16, 48, 0) 9px, rgb(102, 17, 51) 10px, rgba(96, 16, 48, 0) 11px), rgb(136, 170, 51);" style="background:
+radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+radial-gradient(at 100% 100%,     rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px),
+#8a3;
+background-size: 20px 20px;; background:
+radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+radial-gradient(at 100% 100%,     rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px),
+#8a3;
+background-size: 20px 20px;"><div><h2><a href="http://lea.verou.me/css3patterns/#microbial-mat">Microbial Mat</a> <span class="bytesize">(251 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://logan.mcbroom.me/">Logan McBroom</a></p><textarea data-subject="#patterns li:nth-child(1)" wrap="off" spellcheck="false" rows="5" style="font-size: 75%;"></textarea></div></li>
+
+	<li title="Stairs" data-author="Logan McBroom" data-author-url="http://logan.mcbroom.me" id="stairs" data-originalstyle="background: 
+linear-gradient(63deg, #999 23%, transparent 23%) 7px 0, 
+linear-gradient(63deg, transparent 74%, #999 78%), 
+linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%), 
+#444;
+background-size: 16px 48px;" data-originalcsstext="background: linear-gradient(63deg, rgb(153, 153, 153) 23%, transparent 23%) 7px 0px / 16px 48px, linear-gradient(63deg, transparent 74%, rgb(153, 153, 153) 78%), linear-gradient(63deg, transparent 34%, rgb(153, 153, 153) 38%, rgb(153, 153, 153) 58%, transparent 62%), rgb(68, 68, 68);" style="background: 
+linear-gradient(63deg, #999 23%, transparent 23%) 7px 0, 
+linear-gradient(63deg, transparent 74%, #999 78%), 
+linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%), 
+#444;
+background-size: 16px 48px;; background: 
+linear-gradient(63deg, #999 23%, transparent 23%) 7px 0, 
+linear-gradient(63deg, transparent 74%, #999 78%), 
+linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%), 
+#444;
+background-size: 16px 48px;"><div><h2><a href="http://lea.verou.me/css3patterns/#stairs">Stairs</a> <span class="bytesize">(239 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://logan.mcbroom.me/">Logan McBroom</a></p><textarea data-subject="#patterns li:nth-child(2)" wrap="off" spellcheck="false" rows="6" style="font-size: 70%;"></textarea></div></li>
+
+	<li title="Half-Rombes" data-author="Valentin Agachi" data-author-url="http://agachi.name/" id="half-rombes" data-originalstyle="background: #36c;
+background: 
+linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+#36c;
+background-size: 15px 30px" data-originalcsstext="background: linear-gradient(115deg, transparent 75%, rgba(255, 255, 255, 0.8) 75%) 0px 0px / 15px 30px, linear-gradient(245deg, transparent 75%, rgba(255, 255, 255, 0.8) 75%) 0px 0px, linear-gradient(115deg, transparent 75%, rgba(255, 255, 255, 0.8) 75%) 7px -15px, linear-gradient(245deg, transparent 75%, rgba(255, 255, 255, 0.8) 75%) 7px -15px, rgb(51, 102, 204);" style="background: #36c;
+background: 
+linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+#36c;
+background-size: 15px 30px; background: #36c;
+background: 
+linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+#36c;
+background-size: 15px 30px"><div><h2><a href="http://lea.verou.me/css3patterns/#half-rombes">Half-Rombes</a> <span class="bytesize">(369 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://agachi.name/">Valentin Agachi</a></p><textarea data-subject="#patterns li:nth-child(3)" wrap="off" spellcheck="false" rows="8" style="font-size: 65%;"></textarea></div></li>
+
+		<li title="Arrows" data-author="Jeroen Franse" data-author-url="http://twitter.com/jroenf" id="arrows" data-originalstyle="background:
+linear-gradient(45deg, #92baac 45px, transparent 45px)64px 64px,
+linear-gradient(45deg, #92baac 45px, transparent 45px,transparent 91px, #e1ebbd 91px, #e1ebbd 135px, transparent 135px),
+linear-gradient(-45deg, #92baac 23px, transparent 23px, transparent 68px,#92baac 68px,#92baac 113px,transparent 113px,transparent 158px,#92baac 158px);
+background-color:#e1ebbd;
+background-size: 128px 128px;" data-originalcsstext="background: linear-gradient(45deg, rgb(146, 186, 172) 45px, transparent 45px) 64px 64px / 128px 128px, linear-gradient(45deg, rgb(146, 186, 172) 45px, transparent 45px, transparent 91px, rgb(225, 235, 189) 91px, rgb(225, 235, 189) 135px, transparent 135px), linear-gradient(-45deg, rgb(146, 186, 172) 23px, transparent 23px, transparent 68px, rgb(146, 186, 172) 68px, rgb(146, 186, 172) 113px, transparent 113px, transparent 158px, rgb(146, 186, 172) 158px) rgb(225, 235, 189);" style="background:
+linear-gradient(45deg, #92baac 45px, transparent 45px)64px 64px,
+linear-gradient(45deg, #92baac 45px, transparent 45px,transparent 91px, #e1ebbd 91px, #e1ebbd 135px, transparent 135px),
+linear-gradient(-45deg, #92baac 23px, transparent 23px, transparent 68px,#92baac 68px,#92baac 113px,transparent 113px,transparent 158px,#92baac 158px);
+background-color:#e1ebbd;
+background-size: 128px 128px;; background:
+linear-gradient(45deg, #92baac 45px, transparent 45px)64px 64px,
+linear-gradient(45deg, #92baac 45px, transparent 45px,transparent 91px, #e1ebbd 91px, #e1ebbd 135px, transparent 135px),
+linear-gradient(-45deg, #92baac 23px, transparent 23px, transparent 68px,#92baac 68px,#92baac 113px,transparent 113px,transparent 158px,#92baac 158px);
+background-color:#e1ebbd;
+background-size: 128px 128px;"><div><h2><a href="http://lea.verou.me/css3patterns/#arrows">Arrows</a> <span class="bytesize">(409 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://twitter.com/jroenf">Jeroen Franse</a></p><textarea data-subject="#patterns li:nth-child(4)" wrap="off" spellcheck="false" rows="6" style="font-size: 70%;"></textarea></div></li>
+
+	<li title="Zig-Zag" data-author="eCSSpert" data-author-url="http://twitter.com/ecsspert" id="zig-zag" data-originalstyle="background: 
+linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
+linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
+linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
+linear-gradient(45deg, #ECEDDC 25%, transparent 25%);	
+background-size: 100px 100px;
+background-color: #EC173A;" data-originalcsstext="background: linear-gradient(135deg, rgb(236, 237, 220) 25%, transparent 25%) -50px 0px / 100px 100px, linear-gradient(225deg, rgb(236, 237, 220) 25%, transparent 25%) -50px 0px, linear-gradient(315deg, rgb(236, 237, 220) 25%, transparent 25%), linear-gradient(45deg, rgb(236, 237, 220) 25%, transparent 25%) rgb(236, 23, 58);" style="background: 
+linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
+linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
+linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
+linear-gradient(45deg, #ECEDDC 25%, transparent 25%);	
+background-size: 100px 100px;
+background-color: #EC173A;; background: 
+linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
+linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
+linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
+linear-gradient(45deg, #ECEDDC 25%, transparent 25%);	
+background-size: 100px 100px;
+background-color: #EC173A;"><div><h2><a href="http://lea.verou.me/css3patterns/#zig-zag">Zig-Zag</a> <span class="bytesize">(310 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://twitter.com/ecsspert">eCSSpert</a></p><textarea data-subject="#patterns li:nth-child(5)" wrap="off" spellcheck="false" rows="7" style="font-size: 65%;"></textarea></div></li>
+
+	<li title="Weave" data-author="Jeroen Franse" data-author-url="http://twitter.com/jroenf" id="weave" data-originalstyle="background:
+linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+background-color:#708090;
+background-size: 64px 128px" data-originalcsstext="background: linear-gradient(135deg, rgb(112, 128, 144) 22px, rgb(217, 236, 255) 22px, rgb(217, 236, 255) 24px, transparent 24px, transparent 67px, rgb(217, 236, 255) 67px, rgb(217, 236, 255) 69px, transparent 69px) , linear-gradient(225deg, rgb(112, 128, 144) 22px, rgb(217, 236, 255) 22px, rgb(217, 236, 255) 24px, transparent 24px, transparent 67px, rgb(217, 236, 255) 67px, rgb(217, 236, 255) 69px, transparent 69px) 0px 64px rgb(112, 128, 144);" style="background:
+linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+background-color:#708090;
+background-size: 64px 128px; background:
+linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+background-color:#708090;
+background-size: 64px 128px"><div><h2><a href="http://lea.verou.me/css3patterns/#weave">Weave</a> <span class="bytesize">(372 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://twitter.com/jroenf">Jeroen Franse</a></p><textarea data-subject="#patterns li:nth-child(6)" wrap="off" spellcheck="false" rows="5" style="font-size: 75%;"></textarea></div></li>
+
+	<li title="Upholstery" data-author="Nate Eagle" data-author-url="http://nateeagle.com/" id="upholstery" data-originalstyle="background:
+radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 9%, hsla(0, 100%, 20%, 0) 9%) 0 0,
+radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 8%, hsla(0, 100%, 20%, 0) 10%) 50px 50px,
+radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 50px 0,
+radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 0 50px,
+radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 50px 0,
+radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 100px 50px,
+radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 0 0,
+radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 50px 50px,
+linear-gradient(45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0,
+linear-gradient(-45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0;
+background-color: #300; 
+background-size: 100px 100px;" data-originalcsstext="background: radial-gradient(rgb(138, 0, 0) 4%, rgb(92, 0, 0) 9%, rgba(102, 0, 0, 0) 9%) 0px 0px / 100px 100px, radial-gradient(rgb(138, 0, 0) 4%, rgb(92, 0, 0) 8%, rgba(102, 0, 0, 0) 10%) 50px 50px, radial-gradient(rgba(153, 0, 0, 0.8) 20%, rgba(102, 0, 0, 0)) 50px 0px, radial-gradient(rgba(153, 0, 0, 0.8) 20%, rgba(102, 0, 0, 0)) 0px 50px, radial-gradient(rgb(102, 0, 0) 35%, rgba(102, 0, 0, 0) 60%) 50px 0px, radial-gradient(rgb(102, 0, 0) 35%, rgba(102, 0, 0, 0) 60%) 100px 50px, radial-gradient(rgba(76, 0, 0, 0.701961), rgba(102, 0, 0, 0)) 0px 0px, radial-gradient(rgba(76, 0, 0, 0.701961), rgba(102, 0, 0, 0)) 50px 50px, linear-gradient(45deg, rgba(102, 0, 0, 0) 49%, rgb(0, 0, 0) 50%, rgba(102, 0, 0, 0) 70%) 0px 0px, linear-gradient(-45deg, rgba(102, 0, 0, 0) 49%, rgb(0, 0, 0) 50%, rgba(102, 0, 0, 0) 70%) 0px 0px rgb(51, 0, 0);" style="background:
+radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 9%, hsla(0, 100%, 20%, 0) 9%) 0 0,
+radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 8%, hsla(0, 100%, 20%, 0) 10%) 50px 50px,
+radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 50px 0,
+radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 0 50px,
+radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 50px 0,
+radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 100px 50px,
+radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 0 0,
+radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 50px 50px,
+linear-gradient(45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0,
+linear-gradient(-45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0;
+background-color: #300; 
+background-size: 100px 100px;; background:
+radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 9%, hsla(0, 100%, 20%, 0) 9%) 0 0,
+radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 8%, hsla(0, 100%, 20%, 0) 10%) 50px 50px,
+radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 50px 0,
+radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 0 50px,
+radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 50px 0,
+radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 100px 50px,
+radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 0 0,
+radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 50px 50px,
+linear-gradient(45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0,
+linear-gradient(-45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0;
+background-color: #300; 
+background-size: 100px 100px;"><div><h2><a href="http://lea.verou.me/css3patterns/#upholstery">Upholstery</a> <span class="bytesize">(939 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://nateeagle.com/">Nate Eagle</a></p><textarea data-subject="#patterns li:nth-child(7)" wrap="off" spellcheck="false" rows="13" style="font-size: 65%;"></textarea></div></li>
+
+	<li style="background-color:black;
+background-image:
+radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;; background-color:black;
+background-image:
+radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;" title="Starry night" id="starry-night" data-originalstyle="background-color:black;
+background-image:
+radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;" data-originalcsstext="background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 40px), radial-gradient(white, rgba(255, 255, 255, 0.14902) 1px, transparent 30px), radial-gradient(white, rgba(255, 255, 255, 0.0980392) 2px, transparent 40px), radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.0980392) 2px, transparent 30px); background-color: black; background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; background-position: 0px 0px, 40px 60px, 130px 270px, 70px 100px;"><div><h2><a href="http://lea.verou.me/css3patterns/#starry-night">Starry night</a> <span class="bytesize">(467 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(8)" wrap="off" spellcheck="false" rows="8" style="font-size: 65%;"></textarea></div></li>	
+
+	<li style="background-color:white;
+background-image:
+radial-gradient(midnightblue 9px, transparent 10px),        
+repeating-radial-gradient(midnightblue 0, midnightblue 4px, transparent 5px, transparent 20px, midnightblue 21px, midnightblue 25px, transparent 26px, transparent 50px);    
+background-size: 30px 30px, 90px 90px; 
+background-position: 0 0;; background-color:white;
+background-image:
+radial-gradient(midnightblue 9px, transparent 10px),        
+repeating-radial-gradient(midnightblue 0, midnightblue 4px, transparent 5px, transparent 20px, midnightblue 21px, midnightblue 25px, transparent 26px, transparent 50px);    
+background-size: 30px 30px, 90px 90px; 
+background-position: 0 0;" title="Marrakesh" data-author="Divya Manian" data-author-url="http://nimbupani.com" id="marrakesh" data-originalstyle="background-color:white;
+background-image:
+radial-gradient(midnightblue 9px, transparent 10px),        
+repeating-radial-gradient(midnightblue 0, midnightblue 4px, transparent 5px, transparent 20px, midnightblue 21px, midnightblue 25px, transparent 26px, transparent 50px);    
+background-size: 30px 30px, 90px 90px; 
+background-position: 0 0;" data-originalcsstext="background-image: radial-gradient(rgb(25, 25, 112) 9px, transparent 10px), repeating-radial-gradient(rgb(25, 25, 112) 0px, rgb(25, 25, 112) 4px, transparent 5px, transparent 20px, rgb(25, 25, 112) 21px, rgb(25, 25, 112) 25px, transparent 26px, transparent 50px); background-color: white; background-size: 30px 30px, 90px 90px; background-position: 0px 0px;"><div><h2><a href="http://lea.verou.me/css3patterns/#marrakesh">Marrakesh</a> <span class="bytesize">(346 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://nimbupani.com/">Divya Manian</a></p><textarea data-subject="#patterns li:nth-child(9)" wrap="off" spellcheck="false" rows="6" style="font-size: 70%;"></textarea></div></li>
+
+	<li title="Rainbow bokeh" data-author="Auke Zwart" data-author-url="http://twitter.com/okke29" id="rainbow-bokeh" data-originalstyle="background: 
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.15) 30%, rgba(255,255,255,.3) 32%, rgba(255,255,255,0) 33%) 0 0,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.3) 13%, rgba(255,255,255,0) 14%) 0 0,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 17%, rgba(255,255,255,.43) 19%, rgba(255,255,255,0) 20%) 0 110px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) -130px -170px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) 130px 370px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.2) 13%, rgba(255,255,255,0) 14%) 0 0,
+linear-gradient(45deg, #343702 0%, #184500 20%, #187546 30%, #006782 40%, #0b1284 50%, #760ea1 60%, #83096e 70%, #840b2a 80%, #b13e12 90%, #e27412 100%);
+background-size: 470px 470px, 970px 970px, 410px 410px, 610px 610px, 530px 530px, 730px 730px, 100% 100%;
+background-color: #840b2a;" data-originalcsstext="background: radial-gradient(rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.14902) 30%, rgba(255, 255, 255, 0.298039) 32%, rgba(255, 255, 255, 0) 33%) 0px 0px / 470px 470px, radial-gradient(rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.0980392) 11%, rgba(255, 255, 255, 0.298039) 13%, rgba(255, 255, 255, 0) 14%) 0px 0px / 970px 970px, radial-gradient(rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.2) 17%, rgba(255, 255, 255, 0.431373) 19%, rgba(255, 255, 255, 0) 20%) 0px 110px / 410px 410px, radial-gradient(rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.2) 11%, rgba(255, 255, 255, 0.4) 13%, rgba(255, 255, 255, 0) 14%) -130px -170px / 610px 610px, radial-gradient(rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.2) 11%, rgba(255, 255, 255, 0.4) 13%, rgba(255, 255, 255, 0) 14%) 130px 370px / 530px 530px, radial-gradient(rgba(255, 255, 255, 0) 0px, rgba(255, 255, 255, 0.0980392) 11%, rgba(255, 255, 255, 0.2) 13%, rgba(255, 255, 255, 0) 14%) 0px 0px / 730px 730px, linear-gradient(45deg, rgb(52, 55, 2) 0%, rgb(24, 69, 0) 20%, rgb(24, 117, 70) 30%, rgb(0, 103, 130) 40%, rgb(11, 18, 132) 50%, rgb(118, 14, 161) 60%, rgb(131, 9, 110) 70%, rgb(132, 11, 42) 80%, rgb(177, 62, 18) 90%, rgb(226, 116, 18) 100%)  rgb(132, 11, 42);" style="background: 
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.15) 30%, rgba(255,255,255,.3) 32%, rgba(255,255,255,0) 33%) 0 0,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.3) 13%, rgba(255,255,255,0) 14%) 0 0,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 17%, rgba(255,255,255,.43) 19%, rgba(255,255,255,0) 20%) 0 110px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) -130px -170px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) 130px 370px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.2) 13%, rgba(255,255,255,0) 14%) 0 0,
+linear-gradient(45deg, #343702 0%, #184500 20%, #187546 30%, #006782 40%, #0b1284 50%, #760ea1 60%, #83096e 70%, #840b2a 80%, #b13e12 90%, #e27412 100%);
+background-size: 470px 470px, 970px 970px, 410px 410px, 610px 610px, 530px 530px, 730px 730px, 100% 100%;
+background-color: #840b2a;; background: 
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.15) 30%, rgba(255,255,255,.3) 32%, rgba(255,255,255,0) 33%) 0 0,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.3) 13%, rgba(255,255,255,0) 14%) 0 0,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 17%, rgba(255,255,255,.43) 19%, rgba(255,255,255,0) 20%) 0 110px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) -130px -170px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) 130px 370px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.2) 13%, rgba(255,255,255,0) 14%) 0 0,
+linear-gradient(45deg, #343702 0%, #184500 20%, #187546 30%, #006782 40%, #0b1284 50%, #760ea1 60%, #83096e 70%, #840b2a 80%, #b13e12 90%, #e27412 100%);
+background-size: 470px 470px, 970px 970px, 410px 410px, 610px 610px, 530px 530px, 730px 730px, 100% 100%;
+background-color: #840b2a;"><div><h2><a href="http://lea.verou.me/css3patterns/#rainbow-bokeh">Rainbow bokeh</a> <span class="bytesize">(1.03 KB)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://twitter.com/okke29">Auke Zwart</a></p><textarea data-subject="#patterns li:nth-child(10)" wrap="off" spellcheck="false" rows="10" style="font-size: 65%;"></textarea></div></li>
+	
+	<li title="Carbon" data-author="Atle Mo (design), Sébastien Grosjean (code)" data-author-url="http://www.zencocoon.com/" id="carbon" data-originalstyle="background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;" data-originalcsstext="background: linear-gradient(27deg, rgb(21, 21, 21) 5px, transparent 5px) 0px 5px / 20px 20px, linear-gradient(207deg, rgb(21, 21, 21) 5px, transparent 5px) 10px 0px, linear-gradient(27deg, rgb(34, 34, 34) 5px, transparent 5px) 0px 10px, linear-gradient(207deg, rgb(34, 34, 34) 5px, transparent 5px) 10px 5px, linear-gradient(90deg, rgb(27, 27, 27) 10px, transparent 10px), linear-gradient(rgb(29, 29, 29) 25%, rgb(26, 26, 26) 25%, rgb(26, 26, 26) 50%, transparent 50%, transparent 75%, rgb(36, 36, 36) 75%, rgb(36, 36, 36)) rgb(19, 19, 19);" style="background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;; background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;"><div><h2><a href="http://lea.verou.me/css3patterns/#carbon">Carbon</a> <span class="bytesize">(486 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://www.zencocoon.com/">Atle Mo (design), Sébastien Grosjean (code)</a></p><textarea data-subject="#patterns li:nth-child(11)" wrap="off" spellcheck="false" rows="9" style="font-size: 65%;"></textarea></div></li>
+	
+	<li title="Carbon fibre" data-author="Atle Mo (design), Lea Verou (code)" data-author-url="http://subtlepatterns.com/#post-22" id="carbon-fibre" data-originalstyle="background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;" data-originalcsstext="background: radial-gradient(black 15%, transparent 16%) 0px 0px / 16px 16px, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.0980392) 15%, transparent 20%) 0px 1px, radial-gradient(rgba(255, 255, 255, 0.0980392) 15%, transparent 20%) 8px 9px rgb(40, 40, 40);" style="background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;; background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;"><div><h2><a href="http://lea.verou.me/css3patterns/#carbon-fibre">Carbon fibre</a> <span class="bytesize">(305 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://subtlepatterns.com/#post-22">Atle Mo (design), Lea Verou (code)</a></p><textarea data-subject="#patterns li:nth-child(12)" wrap="off" spellcheck="false" rows="7" style="font-size: 65%;"></textarea></div></li>
+
+	<li title="Hearts" id="hearts" data-originalstyle="background: 
+radial-gradient(circle closest-side at 60% 43%, #b03 26%, rgba(187,0,51,0) 27%),
+radial-gradient(circle closest-side at 40% 43%, #b03 26%, rgba(187,0,51,0) 27%),
+radial-gradient(circle closest-side at 40% 22%, #d35 45%, rgba(221,51,85,0) 46%),
+radial-gradient(circle closest-side at 60% 22%, #d35 45%, rgba(221,51,85,0) 46%),
+radial-gradient(circle closest-side at 50% 35%, #d35 30%, rgba(221,51,85,0) 31%),
+
+radial-gradient(circle closest-side at 60% 43%, #b03 26%, rgba(187,0,51,0) 27%) 50px 50px,
+radial-gradient(circle closest-side at 40% 43%, #b03 26%, rgba(187,0,51,0) 27%) 50px 50px,
+radial-gradient(circle closest-side at 40% 22%, #d35 45%, rgba(221,51,85,0) 46%) 50px 50px,
+radial-gradient(circle closest-side at 60% 22%, #d35 45%, rgba(221,51,85,0) 46%) 50px 50px,
+radial-gradient(circle closest-side at 50% 35%, #d35 30%, rgba(221,51,85,0) 31%) 50px 50px;
+background-color:#b03;
+background-size:100px 100px;" data-originalcsstext="background: radial-gradient(circle closest-side at 60% 43%, rgb(187, 0, 51) 26%, rgba(187, 0, 51, 0) 27%) , radial-gradient(circle closest-side at 40% 43%, rgb(187, 0, 51) 26%, rgba(187, 0, 51, 0) 27%), radial-gradient(circle closest-side at 40% 22%, rgb(221, 51, 85) 45%, rgba(221, 51, 85, 0) 46%), radial-gradient(circle closest-side at 60% 22%, rgb(221, 51, 85) 45%, rgba(221, 51, 85, 0) 46%), radial-gradient(circle closest-side at 50% 35%, rgb(221, 51, 85) 30%, rgba(221, 51, 85, 0) 31%), radial-gradient(circle closest-side at 60% 43%, rgb(187, 0, 51) 26%, rgba(187, 0, 51, 0) 27%) 50px 50px, radial-gradient(circle closest-side at 40% 43%, rgb(187, 0, 51) 26%, rgba(187, 0, 51, 0) 27%) 50px 50px, radial-gradient(circle closest-side at 40% 22%, rgb(221, 51, 85) 45%, rgba(221, 51, 85, 0) 46%) 50px 50px, radial-gradient(circle closest-side at 60% 22%, rgb(221, 51, 85) 45%, rgba(221, 51, 85, 0) 46%) 50px 50px, radial-gradient(circle closest-side at 50% 35%, rgb(221, 51, 85) 30%, rgba(221, 51, 85, 0) 31%) 50px 50px rgb(187, 0, 51);" style="background: 
+radial-gradient(circle closest-side at 60% 43%, #b03 26%, rgba(187,0,51,0) 27%),
+radial-gradient(circle closest-side at 40% 43%, #b03 26%, rgba(187,0,51,0) 27%),
+radial-gradient(circle closest-side at 40% 22%, #d35 45%, rgba(221,51,85,0) 46%),
+radial-gradient(circle closest-side at 60% 22%, #d35 45%, rgba(221,51,85,0) 46%),
+radial-gradient(circle closest-side at 50% 35%, #d35 30%, rgba(221,51,85,0) 31%),
+
+radial-gradient(circle closest-side at 60% 43%, #b03 26%, rgba(187,0,51,0) 27%) 50px 50px,
+radial-gradient(circle closest-side at 40% 43%, #b03 26%, rgba(187,0,51,0) 27%) 50px 50px,
+radial-gradient(circle closest-side at 40% 22%, #d35 45%, rgba(221,51,85,0) 46%) 50px 50px,
+radial-gradient(circle closest-side at 60% 22%, #d35 45%, rgba(221,51,85,0) 46%) 50px 50px,
+radial-gradient(circle closest-side at 50% 35%, #d35 30%, rgba(221,51,85,0) 31%) 50px 50px;
+background-color:#b03;
+background-size:100px 100px;; background: 
+radial-gradient(circle closest-side at 60% 43%, #b03 26%, rgba(187,0,51,0) 27%),
+radial-gradient(circle closest-side at 40% 43%, #b03 26%, rgba(187,0,51,0) 27%),
+radial-gradient(circle closest-side at 40% 22%, #d35 45%, rgba(221,51,85,0) 46%),
+radial-gradient(circle closest-side at 60% 22%, #d35 45%, rgba(221,51,85,0) 46%),
+radial-gradient(circle closest-side at 50% 35%, #d35 30%, rgba(221,51,85,0) 31%),
+
+radial-gradient(circle closest-side at 60% 43%, #b03 26%, rgba(187,0,51,0) 27%) 50px 50px,
+radial-gradient(circle closest-side at 40% 43%, #b03 26%, rgba(187,0,51,0) 27%) 50px 50px,
+radial-gradient(circle closest-side at 40% 22%, #d35 45%, rgba(221,51,85,0) 46%) 50px 50px,
+radial-gradient(circle closest-side at 60% 22%, #d35 45%, rgba(221,51,85,0) 46%) 50px 50px,
+radial-gradient(circle closest-side at 50% 35%, #d35 30%, rgba(221,51,85,0) 31%) 50px 50px;
+background-color:#b03;
+background-size:100px 100px;"><div><h2><a href="http://lea.verou.me/css3patterns/#hearts">Hearts</a> <span class="bytesize">(943 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(13)" wrap="off" spellcheck="false" rows="14" style="font-size: 65%;"></textarea></div></li>
+	
+	<li style="background-color: #6d695c;
+background-image:
+repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+background-size: 70px 120px;; background-color: #6d695c;
+background-image:
+repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+background-size: 70px 120px;" title="Argyle" data-author="Anna Kassner" data-author-url="http://annamation.ca/" id="argyle" data-originalstyle="background-color: #6d695c;
+background-image:
+repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+background-size: 70px 120px;" data-originalcsstext="background-image: repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.0980392), rgba(255, 255, 255, 0.0980392) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.0980392), rgba(255, 255, 255, 0.0980392) 1px, transparent 1px, transparent 60px), linear-gradient(60deg, rgba(0, 0, 0, 0.0980392) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.0980392) 75%, rgba(0, 0, 0, 0.0980392)), linear-gradient(120deg, rgba(0, 0, 0, 0.0980392) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.0980392) 75%, rgba(0, 0, 0, 0.0980392)); background-color: rgb(109, 105, 92); background-size: 70px 120px;"><div><h2><a href="http://lea.verou.me/css3patterns/#argyle">Argyle</a> <span class="bytesize">(542 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://annamation.ca/">Anna Kassner</a></p><textarea data-subject="#patterns li:nth-child(14)" wrap="off" spellcheck="false" rows="7" style="font-size: 65%;"></textarea></div></li>
+
+	<li style="background-color: #FF7D9D;
+background-size: 58px 58px;
+background-position: 0px 2px, 4px 35px, 29px 31px, 33px 6px,
+0px 36px, 4px 2px, 29px 6px, 33px 30px;
+background-image: 
+linear-gradient(335deg, #C90032 23px, transparent 23px),
+linear-gradient(155deg, #C90032 23px, transparent 23px),
+linear-gradient(335deg, #C90032 23px, transparent 23px),
+linear-gradient(155deg, #C90032 23px, transparent 23px),
+
+linear-gradient(335deg, #C90032 10px, transparent 10px),
+linear-gradient(155deg, #C90032 10px, transparent 10px),
+linear-gradient(335deg, #C90032 10px, transparent 10px),
+linear-gradient(155deg, #C90032 10px, transparent 10px);; background-color: #FF7D9D;
+background-size: 58px 58px;
+background-position: 0px 2px, 4px 35px, 29px 31px, 33px 6px,
+0px 36px, 4px 2px, 29px 6px, 33px 30px;
+background-image: 
+linear-gradient(335deg, #C90032 23px, transparent 23px),
+linear-gradient(155deg, #C90032 23px, transparent 23px),
+linear-gradient(335deg, #C90032 23px, transparent 23px),
+linear-gradient(155deg, #C90032 23px, transparent 23px),
+
+linear-gradient(335deg, #C90032 10px, transparent 10px),
+linear-gradient(155deg, #C90032 10px, transparent 10px),
+linear-gradient(335deg, #C90032 10px, transparent 10px),
+linear-gradient(155deg, #C90032 10px, transparent 10px);" title="Steps" data-author="Nicolas Gallagher" data-author-url="http://nicolasgallagher.com/" id="steps" data-originalstyle="background-color: #FF7D9D;
+background-size: 58px 58px;
+background-position: 0px 2px, 4px 35px, 29px 31px, 33px 6px,
+0px 36px, 4px 2px, 29px 6px, 33px 30px;
+background-image: 
+linear-gradient(335deg, #C90032 23px, transparent 23px),
+linear-gradient(155deg, #C90032 23px, transparent 23px),
+linear-gradient(335deg, #C90032 23px, transparent 23px),
+linear-gradient(155deg, #C90032 23px, transparent 23px),
+
+linear-gradient(335deg, #C90032 10px, transparent 10px),
+linear-gradient(155deg, #C90032 10px, transparent 10px),
+linear-gradient(335deg, #C90032 10px, transparent 10px),
+linear-gradient(155deg, #C90032 10px, transparent 10px);" data-originalcsstext="background-image: linear-gradient(335deg, rgb(201, 0, 50) 23px, transparent 23px), linear-gradient(155deg, rgb(201, 0, 50) 23px, transparent 23px), linear-gradient(335deg, rgb(201, 0, 50) 23px, transparent 23px), linear-gradient(155deg, rgb(201, 0, 50) 23px, transparent 23px), linear-gradient(335deg, rgb(201, 0, 50) 10px, transparent 10px), linear-gradient(155deg, rgb(201, 0, 50) 10px, transparent 10px), linear-gradient(335deg, rgb(201, 0, 50) 10px, transparent 10px), linear-gradient(155deg, rgb(201, 0, 50) 10px, transparent 10px); background-color: rgb(255, 125, 157); background-size: 58px 58px; background-position: 0px 2px, 4px 35px, 29px 31px, 33px 6px, 0px 36px, 4px 2px, 29px 6px, 33px 30px;"><div><h2><a href="http://lea.verou.me/css3patterns/#steps">Steps</a> <span class="bytesize">(643 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://nicolasgallagher.com/">Nicolas Gallagher</a></p><textarea data-subject="#patterns li:nth-child(15)" wrap="off" spellcheck="false" rows="14" style="font-size: 65%;"></textarea></div></li>
+		
+	<li title="Waves" id="waves" data-originalstyle="background: 
+radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
+background-color: slategray;
+background-size:75px 100px;" data-originalcsstext="background: radial-gradient(circle at 100% 50%, transparent 20%, rgba(255, 255, 255, 0.298039) 21%, rgba(255, 255, 255, 0.298039) 34%, transparent 35%, transparent) , radial-gradient(circle at 0% 50%, transparent 20%, rgba(255, 255, 255, 0.298039) 21%, rgba(255, 255, 255, 0.298039) 34%, transparent 35%, transparent) 0px -50px rgb(112, 128, 144);" style="background: 
+radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
+background-color: slategray;
+background-size:75px 100px;; background: 
+radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
+background-color: slategray;
+background-size:75px 100px;"><div><h2><a href="http://lea.verou.me/css3patterns/#waves">Waves</a> <span class="bytesize">(350 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(16)" wrap="off" spellcheck="false" rows="5" style="font-size: 75%;"></textarea></div></li>
+	
+	<li title="Cross" id="cross" data-originalstyle="background: 
+radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent),
+radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent) 50px 50px,
+linear-gradient(#A8B1BB 8px, transparent 8px) 0 -4px,
+linear-gradient(90deg, #A8B1BB 8px, transparent 8px) -4px 0;
+background-color: slategray;
+background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;" data-originalcsstext="background: radial-gradient(circle, transparent 20%, rgb(112, 128, 144) 20%, rgb(112, 128, 144) 80%, transparent 80%, transparent) , radial-gradient(circle, transparent 20%, rgb(112, 128, 144) 20%, rgb(112, 128, 144) 80%, transparent 80%, transparent) 50px 50px / 100px 100px, linear-gradient(rgb(168, 177, 187) 8px, transparent 8px) 0px -4px / 50px 50px, linear-gradient(90deg, rgb(168, 177, 187) 8px, transparent 8px) -4px 0px / 50px 50px rgb(112, 128, 144);" style="background: 
+radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent),
+radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent) 50px 50px,
+linear-gradient(#A8B1BB 8px, transparent 8px) 0 -4px,
+linear-gradient(90deg, #A8B1BB 8px, transparent 8px) -4px 0;
+background-color: slategray;
+background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;; background: 
+radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent),
+radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent) 50px 50px,
+linear-gradient(#A8B1BB 8px, transparent 8px) 0 -4px,
+linear-gradient(90deg, #A8B1BB 8px, transparent 8px) -4px 0;
+background-color: slategray;
+background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;"><div><h2><a href="http://lea.verou.me/css3patterns/#cross">Cross</a> <span class="bytesize">(439 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(17)" wrap="off" spellcheck="false" rows="7" style="font-size: 65%;"></textarea></div></li>
+	<li title="Yin Yang" id="yin-yang" data-originalstyle="background: 
+radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 50px 0,
+radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 50px 0,
+radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 0 50px,
+radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 0 50px,
+radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210,202,171,0) 17%),
+radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%),
+radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210,202,171,0) 17%) 50px 50px,
+radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%) 50px 50px;
+background-color:#63773F;
+background-size:100px 100px;" data-originalcsstext="background: radial-gradient(circle at 50% 59%, rgb(210, 202, 171) 3%, rgb(54, 78, 39) 4%, rgb(54, 78, 39) 11%, rgba(54, 78, 39, 0) 12%, rgba(54, 78, 39, 0)) 50px 0px / 100px 100px, radial-gradient(circle at 50% 41%, rgb(54, 78, 39) 3%, rgb(210, 202, 171) 4%, rgb(210, 202, 171) 11%, rgba(210, 202, 171, 0) 12%, rgba(210, 202, 171, 0)) 50px 0px, radial-gradient(circle at 50% 59%, rgb(210, 202, 171) 3%, rgb(54, 78, 39) 4%, rgb(54, 78, 39) 11%, rgba(54, 78, 39, 0) 12%, rgba(54, 78, 39, 0)) 0px 50px, radial-gradient(circle at 50% 41%, rgb(54, 78, 39) 3%, rgb(210, 202, 171) 4%, rgb(210, 202, 171) 11%, rgba(210, 202, 171, 0) 12%, rgba(210, 202, 171, 0)) 0px 50px, radial-gradient(circle at 100% 50%, rgb(210, 202, 171) 16%, rgba(210, 202, 171, 0) 17%), radial-gradient(circle at 0% 50%, rgb(54, 78, 39) 16%, rgba(54, 78, 39, 0) 17%), radial-gradient(circle at 100% 50%, rgb(210, 202, 171) 16%, rgba(210, 202, 171, 0) 17%) 50px 50px, radial-gradient(circle at 0% 50%, rgb(54, 78, 39) 16%, rgba(54, 78, 39, 0) 17%) 50px 50px rgb(99, 119, 63);" style="background: 
+radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 50px 0,
+radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 50px 0,
+radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 0 50px,
+radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 0 50px,
+radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210,202,171,0) 17%),
+radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%),
+radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210,202,171,0) 17%) 50px 50px,
+radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%) 50px 50px;
+background-color:#63773F;
+background-size:100px 100px;; background: 
+radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 50px 0,
+radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 50px 0,
+radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 0 50px,
+radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 0 50px,
+radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210,202,171,0) 17%),
+radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%),
+radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210,202,171,0) 17%) 50px 50px,
+radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%) 50px 50px;
+background-color:#63773F;
+background-size:100px 100px;"><div><h2><a href="http://lea.verou.me/css3patterns/#yin-yang">Yin Yang</a> <span class="bytesize">(878 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(18)" wrap="off" spellcheck="false" rows="11" style="font-size: 65%;"></textarea></div></li>
+	
+	<li title="Stars" data-author="Nicolas Gallagher" data-author-url="http://nicolasgallagher.com/" id="stars" data-originalstyle="background:
+linear-gradient(324deg, #232927 4%,   transparent 4%) -70px 43px,
+linear-gradient( 36deg, #232927 4%,   transparent 4%) 30px 43px,
+linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 30px 43px,
+linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -70px 43px,
+linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -70px 23px,
+linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 30px 23px,
+
+linear-gradient(324deg, #232927 4%,   transparent 4%) -20px 93px,
+linear-gradient( 36deg, #232927 4%,   transparent 4%) 80px 93px,
+linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 80px 93px,
+linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -20px 93px,
+linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -20px 73px,
+linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 80px 73px;
+background-color: #232927;
+background-size: 100px 100px;" data-originalcsstext="background: linear-gradient(324deg, rgb(35, 41, 39) 4%, transparent 4%) -70px 43px / 100px 100px, linear-gradient(36deg, rgb(35, 41, 39) 4%, transparent 4%) 30px 43px, linear-gradient(72deg, rgb(227, 215, 191) 8.5%, transparent 8.5%) 30px 43px, linear-gradient(288deg, rgb(227, 215, 191) 8.5%, transparent 8.5%) -70px 43px, linear-gradient(216deg, rgb(227, 215, 191) 7.5%, transparent 7.5%) -70px 23px, linear-gradient(144deg, rgb(227, 215, 191) 7.5%, transparent 7.5%) 30px 23px, linear-gradient(324deg, rgb(35, 41, 39) 4%, transparent 4%) -20px 93px, linear-gradient(36deg, rgb(35, 41, 39) 4%, transparent 4%) 80px 93px, linear-gradient(72deg, rgb(227, 215, 191) 8.5%, transparent 8.5%) 80px 93px, linear-gradient(288deg, rgb(227, 215, 191) 8.5%, transparent 8.5%) -20px 93px, linear-gradient(216deg, rgb(227, 215, 191) 7.5%, transparent 7.5%) -20px 73px, linear-gradient(144deg, rgb(227, 215, 191) 7.5%, transparent 7.5%) 80px 73px rgb(35, 41, 39);" style="background:
+linear-gradient(324deg, #232927 4%,   transparent 4%) -70px 43px,
+linear-gradient( 36deg, #232927 4%,   transparent 4%) 30px 43px,
+linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 30px 43px,
+linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -70px 43px,
+linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -70px 23px,
+linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 30px 23px,
+
+linear-gradient(324deg, #232927 4%,   transparent 4%) -20px 93px,
+linear-gradient( 36deg, #232927 4%,   transparent 4%) 80px 93px,
+linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 80px 93px,
+linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -20px 93px,
+linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -20px 73px,
+linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 80px 73px;
+background-color: #232927;
+background-size: 100px 100px;; background:
+linear-gradient(324deg, #232927 4%,   transparent 4%) -70px 43px,
+linear-gradient( 36deg, #232927 4%,   transparent 4%) 30px 43px,
+linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 30px 43px,
+linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -70px 43px,
+linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -70px 23px,
+linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 30px 23px,
+
+linear-gradient(324deg, #232927 4%,   transparent 4%) -20px 93px,
+linear-gradient( 36deg, #232927 4%,   transparent 4%) 80px 93px,
+linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 80px 93px,
+linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -20px 93px,
+linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -20px 73px,
+linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 80px 73px;
+background-color: #232927;
+background-size: 100px 100px;"><div><h2><a href="http://lea.verou.me/css3patterns/#stars">Stars</a> <span class="bytesize">(885 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://nicolasgallagher.com/">Nicolas Gallagher</a></p><textarea data-subject="#patterns li:nth-child(19)" wrap="off" spellcheck="false" rows="16" style="font-size: 65%;"></textarea></div></li>
+	
+	<li style="background-image:
+radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%),
+radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%);
+background-size: 110px 110px;
+background-color: #C8D3A7;
+background-position: 0 0, 55px 55px;; background-image:
+radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%),
+radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%);
+background-size: 110px 110px;
+background-color: #C8D3A7;
+background-position: 0 0, 55px 55px;" title="Brady Bunch" data-author="Estelle Weyl" data-author-url="http://www.standardista.com" id="brady-bunch" data-originalstyle="background-image:
+radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%),
+radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%);
+background-size: 110px 110px;
+background-color: #C8D3A7;
+background-position: 0 0, 55px 55px;" data-originalcsstext="background-image: radial-gradient(closest-side, transparent 0%, transparent 75%, rgb(182, 204, 102) 76%, rgb(182, 204, 102) 85%, rgb(237, 255, 219) 86%, rgb(237, 255, 219) 94%, rgb(255, 255, 255) 95%, rgb(255, 255, 255) 103%, rgb(217, 230, 167) 104%, rgb(217, 230, 167) 112%, rgb(121, 139, 60) 113%, rgb(121, 139, 60) 121%, rgb(255, 255, 255) 122%, rgb(255, 255, 255) 130%, rgb(224, 234, 215) 131%, rgb(224, 234, 215) 140%), radial-gradient(closest-side, transparent 0%, transparent 75%, rgb(182, 204, 102) 76%, rgb(182, 204, 102) 85%, rgb(237, 255, 219) 86%, rgb(237, 255, 219) 94%, rgb(255, 255, 255) 95%, rgb(255, 255, 255) 103%, rgb(217, 230, 167) 104%, rgb(217, 230, 167) 112%, rgb(121, 139, 60) 113%, rgb(121, 139, 60) 121%, rgb(255, 255, 255) 122%, rgb(255, 255, 255) 130%, rgb(224, 234, 215) 131%, rgb(224, 234, 215) 140%); background-color: rgb(200, 211, 167); background-size: 110px 110px; background-position: 0px 0px, 55px 55px;"><div><h2><a href="http://lea.verou.me/css3patterns/#brady-bunch">Brady Bunch</a> <span class="bytesize">(625 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://www.standardista.com/">Estelle Weyl</a></p><textarea data-subject="#patterns li:nth-child(20)" wrap="off" spellcheck="false" rows="6" style="font-size: 70%;"></textarea></div></li>
+	
+	<li style="background-color:#def;
+background-image: radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%),
+radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%);
+background-size:80px 80px;
+background-position:0 0, 40px 40px;; background-color:#def;
+background-image: radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%),
+radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%);
+background-size:80px 80px;
+background-position:0 0, 40px 40px;" title="Shippo" id="shippo" data-originalstyle="background-color:#def;
+background-image: radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%),
+radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%);
+background-size:80px 80px;
+background-position:0 0, 40px 40px;" data-originalcsstext="background-image: radial-gradient(closest-side, transparent 98%, rgba(0, 0, 0, 0.298039) 99%), radial-gradient(closest-side, transparent 98%, rgba(0, 0, 0, 0.298039) 99%); background-color: rgb(221, 238, 255); background-size: 80px 80px; background-position: 0px 0px, 40px 40px;"><div><h2><a href="http://lea.verou.me/css3patterns/#shippo">Shippo</a> <span class="bytesize">(242 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(21)" wrap="off" spellcheck="false" rows="5" style="font-size: 75%;"></textarea></div></li>
+	
+	<li style="background-color: silver;
+background-image: linear-gradient(335deg, #b00 23px, transparent 23px),
+linear-gradient(155deg, #d00 23px, transparent 23px),
+linear-gradient(335deg, #b00 23px, transparent 23px),
+linear-gradient(155deg, #d00 23px, transparent 23px);
+background-size: 58px 58px;	
+background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;; background-color: silver;
+background-image: linear-gradient(335deg, #b00 23px, transparent 23px),
+linear-gradient(155deg, #d00 23px, transparent 23px),
+linear-gradient(335deg, #b00 23px, transparent 23px),
+linear-gradient(155deg, #d00 23px, transparent 23px);
+background-size: 58px 58px;	
+background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;" title="Bricks" data-author="Tab Atkins Jr" data-author-url="http://www.xanthir.com/blog/" id="bricks" data-originalstyle="background-color: silver;
+background-image: linear-gradient(335deg, #b00 23px, transparent 23px),
+linear-gradient(155deg, #d00 23px, transparent 23px),
+linear-gradient(335deg, #b00 23px, transparent 23px),
+linear-gradient(155deg, #d00 23px, transparent 23px);
+background-size: 58px 58px;	
+background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;" data-originalcsstext="background-image: linear-gradient(335deg, rgb(187, 0, 0) 23px, transparent 23px), linear-gradient(155deg, rgb(221, 0, 0) 23px, transparent 23px), linear-gradient(335deg, rgb(187, 0, 0) 23px, transparent 23px), linear-gradient(155deg, rgb(221, 0, 0) 23px, transparent 23px); background-color: silver; background-size: 58px 58px; background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;"><div><h2><a href="http://lea.verou.me/css3patterns/#bricks">Bricks</a> <span class="bytesize">(354 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://www.xanthir.com/blog/">Tab Atkins Jr</a></p><textarea data-subject="#patterns li:nth-child(22)" wrap="off" spellcheck="false" rows="7" style="font-size: 65%;"></textarea></div></li>
+	
+	<li style="background-color:silver;
+background-image: 
+radial-gradient(circle at 100% 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+radial-gradient(circle at 0    150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+radial-gradient(circle at 50%  100%, white 10%, silver 11%, silver 23%, white 24%, white 30%, silver 31%, silver 43%, white 44%, white 50%, silver 51%, silver 63%, white 64%, white 71%, transparent 71%, transparent),
+radial-gradient(circle at 100% 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent),
+radial-gradient(circle at 0    50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent);
+background-size:100px 50px;; background-color:silver;
+background-image: 
+radial-gradient(circle at 100% 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+radial-gradient(circle at 0    150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+radial-gradient(circle at 50%  100%, white 10%, silver 11%, silver 23%, white 24%, white 30%, silver 31%, silver 43%, white 44%, white 50%, silver 51%, silver 63%, white 64%, white 71%, transparent 71%, transparent),
+radial-gradient(circle at 100% 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent),
+radial-gradient(circle at 0    50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent);
+background-size:100px 50px;" title="Seigaiha" id="seigaiha" data-originalstyle="background-color:silver;
+background-image: 
+radial-gradient(circle at 100% 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+radial-gradient(circle at 0    150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),
+radial-gradient(circle at 50%  100%, white 10%, silver 11%, silver 23%, white 24%, white 30%, silver 31%, silver 43%, white 44%, white 50%, silver 51%, silver 63%, white 64%, white 71%, transparent 71%, transparent),
+radial-gradient(circle at 100% 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent),
+radial-gradient(circle at 0    50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent);
+background-size:100px 50px;" data-originalcsstext="background-image: radial-gradient(circle at 100% 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent), radial-gradient(circle at 0px 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent), radial-gradient(circle at 50% 100%, white 10%, silver 11%, silver 23%, white 24%, white 30%, silver 31%, silver 43%, white 44%, white 50%, silver 51%, silver 63%, white 64%, white 71%, transparent 71%, transparent), radial-gradient(circle at 100% 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent), radial-gradient(circle at 0px 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent); background-color: silver; background-size: 100px 50px;"><div><h2><a href="http://lea.verou.me/css3patterns/#seigaiha">Seigaiha</a> <span class="bytesize">(1018 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(23)" wrap="off" spellcheck="false" rows="8" style="font-size: 65%;"></textarea></div></li>
+	
+	<li style="background-color:#556;
+background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a), 
+linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
+background-size:80px 140px;
+background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;; background-color:#556;
+background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a), 
+linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
+background-size:80px 140px;
+background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;" title="Japanese cube" id="japanese-cube" data-originalstyle="background-color:#556;
+background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a), 
+linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
+background-size:80px 140px;
+background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;" data-originalcsstext="background-image: linear-gradient(30deg, rgb(68, 68, 85) 12%, transparent 12.5%, transparent 87%, rgb(68, 68, 85) 87.5%, rgb(68, 68, 85)), linear-gradient(150deg, rgb(68, 68, 85) 12%, transparent 12.5%, transparent 87%, rgb(68, 68, 85) 87.5%, rgb(68, 68, 85)), linear-gradient(30deg, rgb(68, 68, 85) 12%, transparent 12.5%, transparent 87%, rgb(68, 68, 85) 87.5%, rgb(68, 68, 85)), linear-gradient(150deg, rgb(68, 68, 85) 12%, transparent 12.5%, transparent 87%, rgb(68, 68, 85) 87.5%, rgb(68, 68, 85)), linear-gradient(60deg, rgb(153, 153, 170) 25%, transparent 25.5%, transparent 75%, rgb(153, 153, 170) 75%, rgb(153, 153, 170)), linear-gradient(60deg, rgb(153, 153, 170) 25%, transparent 25.5%, transparent 75%, rgb(153, 153, 170) 75%, rgb(153, 153, 170)); background-color: rgb(85, 85, 102); background-size: 80px 140px; background-position: 0px 0px, 0px 0px, 40px 70px, 40px 70px, 0px 0px, 40px 70px;"><div><h2><a href="http://lea.verou.me/css3patterns/#japanese-cube">Japanese cube</a> <span class="bytesize">(671 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(24)" wrap="off" spellcheck="false" rows="9" style="font-size: 65%;"></textarea></div></li>
+	
+	<li style="background-color:#001;
+background-image: radial-gradient(white 15%, transparent 16%),
+radial-gradient(white 15%, transparent 16%);
+background-size:60px 60px;
+background-position: 0 0, 30px 30px;; background-color:white;
+background-image: radial-gradient(rgb(218, 219, 222) 15%, transparent 16%),
+radial-gradient(rgb(218, 219, 222) 15%, transparent 16%);
+background-size:10px 10px;
+background-position: 0 0, 25px 25px;" title="Polka dot" id="polka-dot" data-originalstyle="background-color:#001;
+background-image: radial-gradient(white 15%, transparent 16%),
+radial-gradient(white 15%, transparent 16%);
+background-size:60px 60px;
+background-position: 0 0, 30px 30px;" data-originalcsstext="background-image: radial-gradient(white 15%, transparent 16%), radial-gradient(white 15%, transparent 16%); background-color: rgb(0, 0, 17); background-size: 60px 60px; background-position: 0px 0px, 30px 30px;"><div><h2><a href="./CSS3 Patterns Gallery_files/CSS3 Patterns Gallery.html">Polka dot</a> <span class="bytesize">224 B</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(25)" wrap="off" spellcheck="false" rows="5" style="font-size: 75%;" class=""></textarea></div></li>
+	
+	<li title="Houndstooth" data-author="Antoine Bernier" data-author-url="http://abernier.name" id="houndstooth" data-originalstyle="background:
+linear-gradient(-45deg, white 25%, transparent 25%, transparent 75%, black 75%, black) 0 0,
+linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, white 75%, white) 1em 1em,
+linear-gradient(45deg, black 17%, transparent 17%, transparent 25%, black 25%, black 36%, transparent 36%, transparent 64%, black 64%, black 75%, transparent 75%, transparent 83%, black 83%) 1em 1em;
+background-color: white;
+background-size: 2em 2em;" data-originalcsstext="background: linear-gradient(-45deg, white 25%, transparent 25%, transparent 75%, black 75%, black) 0px 0px / 2em 2em, linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, white 75%, white) 1em 1em, linear-gradient(45deg, black 17%, transparent 17%, transparent 25%, black 25%, black 36%, transparent 36%, transparent 64%, black 64%, black 75%, transparent 75%, transparent 83%, black 83%) 1em 1em white;" style="background:
+linear-gradient(-45deg, white 25%, transparent 25%, transparent 75%, black 75%, black) 0 0,
+linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, white 75%, white) 1em 1em,
+linear-gradient(45deg, black 17%, transparent 17%, transparent 25%, black 25%, black 36%, transparent 36%, transparent 64%, black 64%, black 75%, transparent 75%, transparent 83%, black 83%) 1em 1em;
+background-color: white;
+background-size: 2em 2em;; background:
+linear-gradient(-45deg, white 25%, transparent 25%, transparent 75%, black 75%, black) 0 0,
+linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, white 75%, white) 1em 1em,
+linear-gradient(45deg, black 17%, transparent 17%, transparent 25%, black 25%, black 36%, transparent 36%, transparent 64%, black 64%, black 75%, transparent 75%, transparent 83%, black 83%) 1em 1em;
+background-color: white;
+background-size: 2em 2em;"><div><h2><a href="http://lea.verou.me/css3patterns/#houndstooth">Houndstooth</a> <span class="bytesize">(454 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://abernier.name/">Antoine Bernier</a></p><textarea data-subject="#patterns li:nth-child(26)" wrap="off" spellcheck="false" rows="6" style="font-size: 70%;"></textarea></div></li>
+	  
+	<li style="background-color: #eee;
+background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), 
+linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+background-size:60px 60px;
+background-position:0 0, 30px 30px; background-color: #eee;
+background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), 
+linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+background-size:60px 60px;
+background-position:0 0, 30px 30px" title="Checkerboard" id="checkerboard" data-originalstyle="background-color: #eee;
+background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), 
+linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+background-size:60px 60px;
+background-position:0 0, 30px 30px" data-originalcsstext="background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black); background-color: rgb(238, 238, 238); background-size: 60px 60px; background-position: 0px 0px, 30px 30px;"><div><h2><a href="http://lea.verou.me/css3patterns/#checkerboard">Checkerboard</a> <span class="bytesize">(281 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(27)" wrap="off" spellcheck="false" rows="5" style="font-size: 75%;"></textarea></div></li>		
+	
+	<li style="background-color: #eee;
+background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), 
+linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+background-size:60px 60px;; background-color: #eee;
+background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), 
+linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+background-size:60px 60px;" title="Diagonal checkerboard" id="diagonal-checkerboard" data-originalstyle="background-color: #eee;
+background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), 
+linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+background-size:60px 60px;" data-originalcsstext="background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, black 75%, black); background-color: rgb(238, 238, 238); background-size: 60px 60px;"><div><h2><a href="http://lea.verou.me/css3patterns/#diagonal-checkerboard">Diagonal checkerboard</a> <span class="bytesize">(246 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(28)" wrap="off" spellcheck="false" rows="4" style="font-size: 80%;"></textarea></div></li>
+
+	<li style="background-color: hsl(2, 57%, 40%);
+background-image: repeating-linear-gradient(transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0,0,0,.2) 2px, rgba(0,0,0,.2) 3px, transparent 3px, transparent 5px, rgba(0,0,0,.2) 5px);; background-color: hsl(2, 57%, 40%);
+background-image: repeating-linear-gradient(transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0,0,0,.2) 2px, rgba(0,0,0,.2) 3px, transparent 3px, transparent 5px, rgba(0,0,0,.2) 5px);" title="Tartan" data-author="Marta Armada" data-author-url="http://swwweet.com" id="tartan" data-originalstyle="background-color: hsl(2, 57%, 40%);
+background-image: repeating-linear-gradient(transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0,0,0,.2) 2px, rgba(0,0,0,.2) 3px, transparent 3px, transparent 5px, rgba(0,0,0,.2) 5px);" data-originalcsstext="background-image: repeating-linear-gradient(transparent, transparent 50px, rgba(0, 0, 0, 0.4) 50px, rgba(0, 0, 0, 0.4) 53px, transparent 53px, transparent 63px, rgba(0, 0, 0, 0.4) 63px, rgba(0, 0, 0, 0.4) 66px, transparent 66px, transparent 116px, rgba(0, 0, 0, 0.498039) 116px, rgba(0, 0, 0, 0.498039) 166px, rgba(255, 255, 255, 0.2) 166px, rgba(255, 255, 255, 0.2) 169px, rgba(0, 0, 0, 0.498039) 169px, rgba(0, 0, 0, 0.498039) 179px, rgba(255, 255, 255, 0.2) 179px, rgba(255, 255, 255, 0.2) 182px, rgba(0, 0, 0, 0.498039) 182px, rgba(0, 0, 0, 0.498039) 232px, transparent 232px), repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0, 0, 0, 0.4) 50px, rgba(0, 0, 0, 0.4) 53px, transparent 53px, transparent 63px, rgba(0, 0, 0, 0.4) 63px, rgba(0, 0, 0, 0.4) 66px, transparent 66px, transparent 116px, rgba(0, 0, 0, 0.498039) 116px, rgba(0, 0, 0, 0.498039) 166px, rgba(255, 255, 255, 0.2) 166px, rgba(255, 255, 255, 0.2) 169px, rgba(0, 0, 0, 0.498039) 169px, rgba(0, 0, 0, 0.498039) 179px, rgba(255, 255, 255, 0.2) 179px, rgba(255, 255, 255, 0.2) 182px, rgba(0, 0, 0, 0.498039) 182px, rgba(0, 0, 0, 0.498039) 232px, transparent 232px), repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0, 0, 0, 0.2) 2px, rgba(0, 0, 0, 0.2) 3px, transparent 3px, transparent 5px, rgba(0, 0, 0, 0.2) 5px); background-color: rgb(160, 47, 44);"><div><h2><a href="http://lea.verou.me/css3patterns/#tartan">Tartan</a> <span class="bytesize">(1.15 KB)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://swwweet.com/">Marta Armada</a></p><textarea data-subject="#patterns li:nth-child(29)" wrap="off" spellcheck="false" rows="4" style="font-size: 80%;"></textarea></div></li>
+	
+	<li style="background-color: hsl(34, 53%, 82%);
+background-image: repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px,                  
+  hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, 0.5) 35px, hsla(5, 53%, 63%, 0.5) 40px,
+  hsla(197, 62%, 11%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px,                
+  hsla(5, 53%, 63%, 0.5) 60px, hsla(5, 53%, 63%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 80px,
+  hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, 0.5) 90px, hsla(5, 53%, 63%, 0.5) 110px,
+  hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 120px, hsla(197, 62%, 11%, 0.5) 120px, hsla(197, 62%, 11%, 0.5) 140px       
+  ),
+repeating-linear-gradient(135deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px, 
+  hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, 0.5) 35px, hsla(5, 53%, 63%, 0.5) 40px,
+  hsla(197, 62%, 11%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px,                
+  hsla(5, 53%, 63%, 0.5) 60px, hsla(5, 53%, 63%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 80px,
+  hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, 0.5) 90px, hsla(5, 53%, 63%, 0.5) 110px,
+  hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 140px, hsla(197, 62%, 11%, 0.5) 140px, hsla(197, 62%, 11%, 0.5) 160px       
+);; background-color: hsl(34, 53%, 82%);
+background-image: repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px,                  
+  hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, 0.5) 35px, hsla(5, 53%, 63%, 0.5) 40px,
+  hsla(197, 62%, 11%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px,                
+  hsla(5, 53%, 63%, 0.5) 60px, hsla(5, 53%, 63%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 80px,
+  hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, 0.5) 90px, hsla(5, 53%, 63%, 0.5) 110px,
+  hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 120px, hsla(197, 62%, 11%, 0.5) 120px, hsla(197, 62%, 11%, 0.5) 140px       
+  ),
+repeating-linear-gradient(135deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px, 
+  hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, 0.5) 35px, hsla(5, 53%, 63%, 0.5) 40px,
+  hsla(197, 62%, 11%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px,                
+  hsla(5, 53%, 63%, 0.5) 60px, hsla(5, 53%, 63%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 80px,
+  hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, 0.5) 90px, hsla(5, 53%, 63%, 0.5) 110px,
+  hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 140px, hsla(197, 62%, 11%, 0.5) 140px, hsla(197, 62%, 11%, 0.5) 160px       
+);" title="Madras" data-author="Divya Manian" data-author-url="http://nimbupani.com" id="madras" data-originalstyle="background-color: hsl(34, 53%, 82%);
+background-image: repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px,                  
+  hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, 0.5) 35px, hsla(5, 53%, 63%, 0.5) 40px,
+  hsla(197, 62%, 11%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px,                
+  hsla(5, 53%, 63%, 0.5) 60px, hsla(5, 53%, 63%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 80px,
+  hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, 0.5) 90px, hsla(5, 53%, 63%, 0.5) 110px,
+  hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 120px, hsla(197, 62%, 11%, 0.5) 120px, hsla(197, 62%, 11%, 0.5) 140px       
+  ),
+repeating-linear-gradient(135deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px, 
+  hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, 0.5) 35px, hsla(5, 53%, 63%, 0.5) 40px,
+  hsla(197, 62%, 11%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px,                
+  hsla(5, 53%, 63%, 0.5) 60px, hsla(5, 53%, 63%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 80px,
+  hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, 0.5) 90px, hsla(5, 53%, 63%, 0.5) 110px,
+  hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 140px, hsla(197, 62%, 11%, 0.5) 140px, hsla(197, 62%, 11%, 0.5) 160px       
+);" data-originalcsstext="background-image: repeating-linear-gradient(45deg, transparent 5px, rgba(10, 35, 45, 0.498039) 5px, rgba(10, 35, 45, 0.498039) 10px, rgba(211, 119, 111, 0) 10px, rgba(211, 119, 111, 0) 35px, rgba(211, 119, 111, 0.498039) 35px, rgba(211, 119, 111, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 50px, rgba(10, 35, 45, 0) 50px, rgba(10, 35, 45, 0) 60px, rgba(211, 119, 111, 0.498039) 60px, rgba(211, 119, 111, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 80px, rgba(247, 179, 84, 0) 80px, rgba(247, 179, 84, 0) 90px, rgba(211, 119, 111, 0.498039) 90px, rgba(211, 119, 111, 0.498039) 110px, rgba(211, 119, 111, 0) 110px, rgba(211, 119, 111, 0) 120px, rgba(10, 35, 45, 0.498039) 120px, rgba(10, 35, 45, 0.498039) 140px), repeating-linear-gradient(135deg, transparent 5px, rgba(10, 35, 45, 0.498039) 5px, rgba(10, 35, 45, 0.498039) 10px, rgba(211, 119, 111, 0) 10px, rgba(211, 119, 111, 0) 35px, rgba(211, 119, 111, 0.498039) 35px, rgba(211, 119, 111, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 50px, rgba(10, 35, 45, 0) 50px, rgba(10, 35, 45, 0) 60px, rgba(211, 119, 111, 0.498039) 60px, rgba(211, 119, 111, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 80px, rgba(247, 179, 84, 0) 80px, rgba(247, 179, 84, 0) 90px, rgba(211, 119, 111, 0.498039) 90px, rgba(211, 119, 111, 0.498039) 110px, rgba(211, 119, 111, 0) 110px, rgba(211, 119, 111, 0) 140px, rgba(10, 35, 45, 0.498039) 140px, rgba(10, 35, 45, 0.498039) 160px); background-color: rgb(234, 213, 185);"><div><h2><a href="http://lea.verou.me/css3patterns/#madras">Madras</a> <span class="bytesize">(1.51 KB)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://nimbupani.com/">Divya Manian</a></p><textarea data-subject="#patterns li:nth-child(30)" wrap="off" spellcheck="false" rows="15" style="font-size: 65%;"></textarea></div></li>
+
+		<li style="background-color: #fff; 
+background-image: 
+linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+linear-gradient(#eee .1em, transparent .1em);
+background-size: 100% 1.2em;; background-color: #fff; 
+background-image: 
+linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+linear-gradient(#eee .1em, transparent .1em);
+background-size: 100% 1.2em;" title="Lined paper" data-author="Sarah Backhouse" data-author-url="http://www.jadu.net" id="lined-paper" data-originalstyle="background-color: #fff; 
+background-image: 
+linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+linear-gradient(#eee .1em, transparent .1em);
+background-size: 100% 1.2em;" data-originalcsstext="background-image: linear-gradient(90deg, transparent 79px, rgb(171, 206, 212) 79px, rgb(171, 206, 212) 81px, transparent 81px), linear-gradient(rgb(238, 238, 238) 0.1em, transparent 0.1em); background-color: rgb(255, 255, 255); background-size: 100% 1.2em;"><div><h2><a href="http://lea.verou.me/css3patterns/#lined-paper">Lined paper</a> <span class="bytesize">(209 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://www.jadu.net/">Sarah Backhouse</a></p><textarea data-subject="#patterns li:nth-child(31)" wrap="off" spellcheck="false" rows="5" style="font-size: 75%;"></textarea></div></li>
+		
+		<li style="background-color:#269;
+background-image: linear-gradient(white 2px, transparent 2px),
+linear-gradient(90deg, white 2px, transparent 2px),
+linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px; background-color:#269;
+background-image: linear-gradient(white 2px, transparent 2px),
+linear-gradient(90deg, white 2px, transparent 2px),
+linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px" title="Blueprint grid" id="blueprint-grid" data-originalstyle="background-color:#269;
+background-image: linear-gradient(white 2px, transparent 2px),
+linear-gradient(90deg, white 2px, transparent 2px),
+linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px" data-originalcsstext="background-image: linear-gradient(white 2px, transparent 2px), linear-gradient(90deg, white 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, 0.298039) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.298039) 1px, transparent 1px); background-color: rgb(34, 102, 153); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px; background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;"><div><h2><a href="http://lea.verou.me/css3patterns/#blueprint-grid">Blueprint grid</a> <span class="bytesize">(396 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(32)" wrap="off" spellcheck="false" rows="7" style="font-size: 65%;"></textarea></div></li>
+	
+	<li style="background-color:white;
+background-image: linear-gradient(90deg, rgba(200,0,0,.5) 50%, transparent 50%),
+linear-gradient(rgba(200,0,0,.5) 50%, transparent 50%);
+background-size:50px 50px;; background-color:white;
+background-image: linear-gradient(90deg, rgba(200,0,0,.5) 50%, transparent 50%),
+linear-gradient(rgba(200,0,0,.5) 50%, transparent 50%);
+background-size:50px 50px;" title="Tablecloth" id="tablecloth" data-originalstyle="background-color:white;
+background-image: linear-gradient(90deg, rgba(200,0,0,.5) 50%, transparent 50%),
+linear-gradient(rgba(200,0,0,.5) 50%, transparent 50%);
+background-size:50px 50px;" data-originalcsstext="background-image: linear-gradient(90deg, rgba(200, 0, 0, 0.498039) 50%, transparent 50%), linear-gradient(rgba(200, 0, 0, 0.498039) 50%, transparent 50%); background-color: white; background-size: 50px 50px;"><div><h2><a href="http://lea.verou.me/css3patterns/#tablecloth">Tablecloth</a> <span class="bytesize">(189 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(33)" wrap="off" spellcheck="false" rows="4" style="font-size: 80%;"></textarea></div></li>
+	
+	<li style="background-color: gray;
+background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);; background-color: gray;
+background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);" title="Diagonal stripes" id="diagonal-stripes" data-originalstyle="background-color: gray;
+background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);" data-originalcsstext="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255, 255, 255, 0.498039) 35px, rgba(255, 255, 255, 0.498039) 70px); background-color: gray;"><div><h2><a href="http://lea.verou.me/css3patterns/#diagonal-stripes">Diagonal stripes</a> <span class="bytesize">(160 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(34)" wrap="off" spellcheck="false" rows="2" style="font-size: 90%;"></textarea></div></li>
+	
+	<li style="background-color: #026873;
+background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+background-size: 13px, 29px, 37px, 53px;; background-color: #026873;
+background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+background-size: 13px, 29px, 37px, 53px;" title="Cicada stripes" data-author="Randy Merrill" data-author-url="http://forthedeveloper.com/" id="cicada-stripes" data-originalstyle="background-color: #026873;
+background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+background-size: 13px, 29px, 37px, 53px;" data-originalcsstext="background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.0666667) 50%, transparent 50%), linear-gradient(90deg, rgba(255, 255, 255, 0.129412) 50%, transparent 50%), linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.168627) 50%), linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.188235) 50%); background-color: rgb(2, 104, 115); background-size: 13px, 29px, 37px, 53px;"><div><h2><a href="http://lea.verou.me/css3patterns/#cicada-stripes">Cicada stripes</a> <span class="bytesize">(361 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><p>by <a href="http://forthedeveloper.com/">Randy Merrill</a></p><textarea data-subject="#patterns li:nth-child(35)" wrap="off" spellcheck="false" rows="6" style="font-size: 70%;"></textarea></div></li>
+	
+	<li style="background-color: gray;
+background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
+background-size: 50px 50px;; background-color: gray;
+background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
+background-size: 50px 50px;" title="Vertical stripes" id="vertical-stripes" data-originalstyle="background-color: gray;
+background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
+background-size: 50px 50px;" data-originalcsstext="background-image: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.498039) 50%); background-color: gray; background-size: 50px 50px;"><div><h2><a href="http://lea.verou.me/css3patterns/#vertical-stripes">Vertical stripes</a> <span class="bytesize">(137 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(36)" wrap="off" spellcheck="false" rows="3" style="font-size: 85%;"></textarea></div></li>
+
+	<li style="background-color: gray;
+background-image: linear-gradient(transparent 50%, rgba(255,255,255,.5) 50%);
+background-size: 50px 50px;; background-color: gray;
+background-image: linear-gradient(transparent 50%, rgba(255,255,255,.5) 50%);
+background-size: 50px 50px;" title="Horizontal stripes" id="horizontal-stripes" data-originalstyle="background-color: gray;
+background-image: linear-gradient(transparent 50%, rgba(255,255,255,.5) 50%);
+background-size: 50px 50px;" data-originalcsstext="background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, 0.498039) 50%); background-color: gray; background-size: 50px 50px;"><div><h2><a href="http://lea.verou.me/css3patterns/#horizontal-stripes">Horizontal stripes</a> <span class="bytesize">(130 B)</span></h2><a class="close" href="http://lea.verou.me/css3patterns/#">✖</a><textarea data-subject="#patterns li:nth-child(37)" wrap="off" spellcheck="false" rows="3" style="font-size: 85%;"></textarea></div></li>
+	
+</ul>
+
+<h2 id="browser-support">Browser support</h2>
+<p>The patterns themselves should work on <strong>Firefox 3.6+</strong>, <strong>Chrome</strong>, <strong>Safari 5.1</strong>, <strong>Opera 11.10+</strong> and <strong>IE10+</strong>. 
+However, implementation limitations might cause some of them to not be displayed correctly even on those browsers (for example at the time of writing, Gecko is quite buggy with radial gradients).</p>
+<p>Also, this gallery won’t work in Firefox 3.6 and IE10, even though they support gradients, due to a JavaScript limitation.</p>
+
+<h2 id="new-submissions">Submission guidelines</h2>
+<p>If you have a new pattern to submit, please <a href="https://github.com/LeaVerou/CSS3-Patterns-Gallery">send a pull request</a>. However, please bear in mind that I can't accept all submissions, sorry for that. For a pattern to be accepted, the following factors are considered (in descending order of importance):</p>
+<ul>
+	<li>Does it present a new technique?</li>
+	<li>Is the number of gradients and color stops worth the effect? The whole point of those patterns is to make page loading faster by reducing file size and HTTP requests without the unreadable gibberish that data URIs add in our stylesheets. If your pattern needs a 2KB code for example (which becomes 10KB when used in production, due to all the prefixes), then it's not very useful, except serving as a proof of concept.</li>
+	<li>How common is the pattern?</li>
+	<li>Does it look nice?</li>
+</ul>
+
+<p id="footer">
+	By <a href="http://lea.verou.me/">Lea Verou</a>
+	• If no other author is mentioned, the pattern is created by <a href="http://lea.verou.me/">Lea Verou</a>
+</p>
+
+<script src="./CSS3 Patterns Gallery_files/prefixfree.min.js"></script>
+<script>
+StyleFix.register(function(css, raw) {
+	if (PrefixFree.functions.indexOf('radial-gradient') > -1) {
+		css = css.replace(/radial-gradient\(([a-z-\s]+\s+)?at ([^,]+)(?=,)/g, function($0, shape, center){
+			return 'radial-gradient(' + center + (shape? ', ' + shape : '');
+		});
+	}
+	
+	return css;
+});
+</script>
+<script src="./CSS3 Patterns Gallery_files/css-edit.js"></script>	
+<script src="./CSS3 Patterns Gallery_files/css-snippets.js"></script>
+<script src="./CSS3 Patterns Gallery_files/incrementable.js"></script>
+<script src="./CSS3 Patterns Gallery_files/bytesize.js"></script>
+<script src="./CSS3 Patterns Gallery_files/css3patterns.js"></script>
+
+<script src="./CSS3 Patterns Gallery_files/ga.js"></script> 
+<script> 
+try {
+var pageTracker = _gat._getTracker("UA-597483-5");
+pageTracker._trackPageview();
+} catch(err) {}
+</script> 
+	
+
+
+</body></html>

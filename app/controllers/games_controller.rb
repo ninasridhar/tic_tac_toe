@@ -18,6 +18,7 @@ class GamesController < ApplicationController
       @last_player = @game.last_player
       @game.computer_or_not
       @game.game_over?
+      
       @result = @game.draw
       respond_to do |format|
         format.html # show.html.erb

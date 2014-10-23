@@ -1,21 +1,28 @@
 <p id="notice"><%= notice %></p>
 
+
+<p><%= link_to 'Edit Profile', edit_user_path(@user) %></p>
+
+<div class = 'user_info'>
+
 <p>
   <b>Username:</b>
   <%= @user.username %>
 </p>
 
 <p>
-  <b>Photo:</b>
-  <%= image_tag(@user.photo) %>
+  <%= image_tag(@user.photo, class: 'profile_photo') %>
 </p>
 
 <p>
   <b>Email:</b>
   <%= @user.email %>
 </p>
-
+</div>
+<div class = 'user_games'>
+<p>
 <% @user_games.each do |game| %>
+
   Game:<%= game.id %><br>
   <%= game.player1.username %>
   vs. 
@@ -24,13 +31,12 @@
   <% else %>
   Computer<br>
   <% end %>
+
   Date: <%= game.created_at %><br>
   <%= link_to('View Current Status/Result', game)%>
   <br>
   <br>
 <% end %>
+</p>
+</div>
 
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

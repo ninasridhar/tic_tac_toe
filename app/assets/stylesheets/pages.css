@@ -1,0 +1,101 @@
+* {
+  font-family: 'Patrick Hand SC';
+}
+
+body {
+  background-color: white;
+  background-image: radial-gradient(rgb(218, 219, 222) 15%, transparent 16%),
+  radial-gradient(rgb(218, 219, 222) 15%, transparent 16%);
+  background-size:10px 10px;
+  background-position: 0 0, 25px 25px;
+}
+
+header{
+  background: rgb(206, 23, 31);
+  height: 120px;
+}
+
+h1{
+  font-family: 'Bangers';
+  font-size: 80px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  color: rgb(228, 194, 32);
+  text-shadow: 3px 0 black, 0 3px black, 3px 0 black, 0 3px black;
+}
+
+.nav_line{
+  background: rgb(243, 199, 21);
+  height: 2px;
+}
+
+nav{
+  background: rgb(28, 106, 176);
+  height: 50px;
+  text-align: center;
+}
+
+nav a{
+  position: relative;
+  top: 20%;
+  padding: 30px;
+  transform: translateY(-30%);
+  text-decoration: none;
+  color: rgb(146, 208, 241);
+  font-family: 'Patrick Hand SC';
+  font-size: 25px;
+}
+
+nav a:hover{
+  color: rgb(238, 155, 28);
+}
+
+.flash_message p{
+  font-family: 'Patrick Hand SC';
+  font-size: 20px;
+  padding-left: 30px;
+}
+
+.main{
+  width: 70%;
+  margin: 0 auto;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(223, 0, 34);
+}
+
+a:hover{
+  color: rgb(145, 0, 120);
+}
+
+h2{
+  color: rgb(222, 0, 33);
+  text-shadow: 1px 0 black, 0 1px black, 1px 0 black, 0 1px black;
+  font-family: 'Bangers';
+  font-size: 35px;
+}
+
+form {
+  font-size: 20px;
+}
+
+.actions input{
+  background: rgb(174, 77, 77);
+  border: 1px rgb(174, 77, 77) solid;
+  margin-top: 20px;
+  color: white;
+  text-decoration: none; 
+  padding: 4px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 0px rgb(139, 0, 0), 0px 2px 5px rgba(0,0,0,.7);
+  width: 160px;
+  text-align: center;
+}
+
+
