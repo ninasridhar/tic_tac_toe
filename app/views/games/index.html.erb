@@ -1,24 +1,25 @@
 
 <div class = 'middle'>
 
-<h2>Listing Games</h2>
+    <h2>Listing Games</h2>
 
 
 
-<% @games.each do |game| %>
+    <% @games.each do |game| %>
+    <td><%= link_to 'Show', game %></td>
+
+    <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <td><%= game.player1.username %></td>
     <% if (game.player2 != nil) %>
     <td><%= game.player2.username %></td>
     <% end %>
     <td><%= game.created_at %></td>
     <% if (game.winner != nil) %>
-        <td><%= @game_winner %></td>
-        <% end %>
-    <td><%= link_to 'Show', game %></td>
+    <td><%= @game_winner %></td>
+    <% end %>
     
-    <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <br>
-  </tr>
+</tr>
 <% end %>
 </table>
 
