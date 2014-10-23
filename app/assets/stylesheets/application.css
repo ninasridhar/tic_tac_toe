@@ -12,37 +12,6 @@
  *= require_tree .
  */
 
- table {
-     border-collapse: collapse;
-     align: center;
- } 
-
-td {
-     border: 1px solid black;
- }
-
- img{
-  height: 50px;
-  width: 50px;
- }
-
-.letter {
-  height: 30%;
-  width: 30%;
-  border: 1px solid black;
-  display: inline-block;
- }
-
- .letter a {
-  width: 100%;
-  visibility: hidden;
- }
-
-.board{
-  width: 300px;
-  height: 300px;
-
-}
 
 
 /* body {

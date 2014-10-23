@@ -1,1 +1,23 @@
 <%= link_to('Play', new_game_path)%>
+
+<h1>Listing Games</h1>
+
+
+
+<% @games.each do |game| %>
+    <td><%= game.player1.username %></td>
+    <% if (game.player2 != nil) %>
+    <td><%= game.player2.username %></td>
+    <% end %>
+    <td><%= game.created_at %></td>
+    <% if (game.winner != nil) %>
+        <td><%= @game_winner %></td>
+        <% end %>
+    <td><%= link_to 'Show', game %></td>
+    
+    <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

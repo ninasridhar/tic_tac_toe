@@ -16,7 +16,8 @@ class GamesController < ApplicationController
       @board = @game.build_board
       @game_winner = @game.game_winner
       @last_player = @game.last_player
-
+      @game.computer_or_not
+      @game.game_over?
       @result = @game.draw
       respond_to do |format|
         format.html # show.html.erb
@@ -37,6 +38,7 @@ class GamesController < ApplicationController
     # GET /users/1/edit
     def edit
       @game = Game.find(params[:id])
+      
     end
 
     # POST /users
@@ -44,6 +46,8 @@ class GamesController < ApplicationController
     def create
       @game = Game.new(params[:game])
       @game.player1 = current_user
+    
+
 
       respond_to do |format|
         if @game.save
@@ -84,6 +88,8 @@ class GamesController < ApplicationController
         format.json { head :no_content }
       end
     end
+
+
 
     
   end

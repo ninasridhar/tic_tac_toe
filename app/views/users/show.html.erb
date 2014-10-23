@@ -15,6 +15,20 @@
   <%= @user.email %>
 </p>
 
+<% @user_games.each do |game| %>
+  Game:<%= game.id %><br>
+  <%= game.player1.username %>
+  vs. 
+  <% if game.player2 != nil %>
+  <%= game.player2.username %><br>
+  <% else %>
+  Computer<br>
+  <% end %>
+  Date: <%= game.created_at %><br>
+  <%= link_to('View Current Status/Result', game)%>
+  <br>
+  <br>
+<% end %>
 
 
 

@@ -1,14 +1,19 @@
 <p>Player 1: <%= @game.player1.username %></p>
+<% if (@game.player2 != nil) %>
 <p>Player 2: <%= @game.player2.username %></p>
-
-<%= @board.inspect %>
-<% if (@game.winner != nil) %>
-<%= @game.winner.username %>
 <% end %>
-<%#= @game_winner%>
-<%= @last_player.inspect %>
-<%= @result.inspect %>
-<meta http-equiv="refresh" content="5">
+<%#= @board.inspect %>
+<% if (@game.winner != nil) %>
+<h2><%= @game.winner.username %> wins!!!!</h2>
+<% end %>
+
+<% if (@result != nil) %>
+<h2><%= @result %></h2>
+<% end %>
+
+<% if (@game.game_over? == false) %>
+<meta http-equiv="refresh" content="1">
+<% end %>
 
 <div class = 'board'>
   <% @board.each_with_index do |move, square_id| %>
