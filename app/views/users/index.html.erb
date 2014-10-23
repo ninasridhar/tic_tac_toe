@@ -3,8 +3,12 @@
   <p>
     <% @users.each do |user| %>
       <br>
-      <%= link_to user do %>
+      <% if current_user == nil %>
         <%=image_tag user.photo %> 
+      <% else %>
+        <%= link_to user do %>
+          <%=image_tag user.photo %> 
+        <% end %>
       <% end %>
       <br>
       <%= user.username %> 
