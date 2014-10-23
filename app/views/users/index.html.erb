@@ -1,18 +1,20 @@
 <div class = 'middle'>
   <h2>Users</h2>
-  <p>
+  <p >
     <% @users.each do |user| %>
-      <br>
-      <% if current_user == nil %>
-        <%=image_tag user.photo %> 
-      <% else %>
-        <%= link_to user do %>
+      <% if user.id != 1 %>
+        <br>
+        <br>
+        <% if current_user == nil %>
           <%=image_tag user.photo %> 
+        <% else %>
+          <%= link_to user do %>
+            <%=image_tag user.photo, class: 'user_index_photo' %> 
+          <% end %>
         <% end %>
-      <% end %>
-      <br>
-      <%= user.username %> 
-      <br>
+          <br>
+          <%= user.username %>
+        <% end %>
       <% end %>
       <br>
       <br>

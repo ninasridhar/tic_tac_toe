@@ -33,7 +33,11 @@ img{
   width: 30%;
   display: inline-block;
   background: rgb(238, 155, 28);
-  border-radius: 50%;
+  border-radius: 20%;
+}
+
+.unpicked:hover{
+  background: rgb(106, 68, 25);
 }
 
 .board{
@@ -123,3 +127,4 @@ img{
     opacity: 1;
   }       
 }
+

@@ -18,7 +18,7 @@
 
 <% if (@game.game_over? == false) %>
   <% if current_user.id == @last_player %> 
-  <meta http-equiv="refresh" content="0.5">
+  <meta http-equiv="refresh" content="1">
   <% end %>
 <% end %>
 
@@ -32,10 +32,10 @@
       <% if (@game.game_over? == false) %> 
         <% if current_user.id != @last_player %>
           <%= link_to new_game_move_path(@game, move: square_id) do %>
-            <div class = 'letter'></div>
+            <div class = 'letter unpicked'></div>
           <% end %>
         <% else %>
-          <div class = 'letter'></div>
+          <div class = 'letter unpicked'></div>
         <% end %>
       <% else %>
         <div class = 'letter'></div>

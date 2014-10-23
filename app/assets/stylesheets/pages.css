@@ -26,6 +26,11 @@ h1{
   -webkit-margin-after: 0em;
   color: rgb(228, 194, 32);
   text-shadow: 3px 0 black, 0 3px black, 3px 0 black, 0 3px black;
+  transition: all 0.5s ease;
+}
+
+h1:hover{
+  transform:scale(1.1);
 }
 
 .nav_line{
@@ -96,6 +101,11 @@ form {
   box-shadow: 0px 2px 0px rgb(139, 0, 0), 0px 2px 5px rgba(0,0,0,.7);
   width: 160px;
   text-align: center;
+  transition: all 0.5s ease;
+}
+
+.actions input:hover{
+  transform:scale(1.15);
 }
 
 img{
