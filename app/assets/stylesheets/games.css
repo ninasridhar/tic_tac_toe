@@ -12,7 +12,6 @@ input, select {
   font-size   : 100%;
 }
 
-
 img{
   height: 50px;
   width: 50px;
@@ -61,7 +60,6 @@ img{
   -webkit-animation-timing-function: ease-out;  
 
   visibility: visible !important; 
-
 }
 
 @keyframes result{
