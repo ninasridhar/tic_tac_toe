@@ -1,0 +1,29 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="999" measuredH="379" mockupW="782" mockupH="343">
+  <controls>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Accordion" x="217" y="45" w="-1" h="-1" measuredW="150" measuredH="186" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Players%0AId%0AEmail%0APassword</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Accordion" x="517" y="36" w="-1" h="-1" measuredW="150" measuredH="159" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Games%0Aplayer_id%20%0Awinner</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Arrow" x="367" y="88" w="150" h="12" measuredW="150" measuredH="100" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>has%20many</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Accordion" x="787" y="193" w="-1" h="-1" measuredW="212" measuredH="186" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tic%20%20Tac%20Toe%20%0Ahas_many%3A%20games</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Arrow" x="668" y="93" w="-1" h="-1" measuredW="150" measuredH="100" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -1,0 +1,80 @@
+## FIRST PROJECT DESCRIPTION
+
+It's time to put everything that you've learned in the past month together! For the first project you will use your knowledge of front and back-end web development to produce an awesome web application that can be used by friends, family or any of the other billions of people who use the Internet. The type of web application you create is your choice.
+
+The objective of this project is to:
+
+* To pull everything together by building a web application from the ground up.
+* To demonstrate mastery of topics covered during this course so far.
+
+You will be working **individually** for this first project. Show us what you've got!
+
+## CORE REQUIREMENTS
+Make sure to do all of the following with your app.
+
+* **Models.** Your app should have at least 3 models. Make sure they are associated correctly!
+  Users, Games, TTT
+
+* **Views.** Use partials to DRY (Donâ€™t Repeat Yourself) up your views.
+
+
+* **Handles invalid data.** Forms in your application should validate data (on the **BACKEND** in models and controllers) and handle incorrect inputs. Validate sign up information, verify necessary model fields are populated (not blank) for required fields, valid email addresses, etc.
+
+
+* **Use an API** APIs add data and functionality to your app (some have gems!)
+  twitter/facebook?
+
+* **User Login.** Make sure you have a user model with basic authentication and authorization set up.
+* **Heroku.** Deploy your code to Heroku with a PostgreSQL database.
+* **Github.** Github, make sure you commit FREQUENTLY!!!! (people always forget this one).
+* **Trello.** Record everything from your project in your Trello board.
+
+## PLANNING & DELIVERABLES
+
+####Project Plan deliverables:
+
+* **Scope.** What are you planning to build? What features will it have? What do you think you can reasonably implement in the time period?
+* **Object Models.** Draw out the model associations for your project.  Pen and paper is very easy and you can take a picture to save it, or use software like PowerPoint, Keynote, Gliffy (online), and Omnigraffle ($$).
+* **Wireframes.** Recall our first day and the "about you" table drawingsâ€¦  Sketch out what a few of your core pages will look like and how they will work and link between each other. Again, pen and aper works great. You can also check out wireframing software like Protoshare or Balsamic.
+* **Resources.** Gather the necessary resources and bookmark links to any documentation or references you will be using in your project.  Add them to your documentation in a section called "Resources."
+* **Milestones.** We will give you some dates and milestones to help keep you on track. Outline some specific milestones for yourself based on how you prefer to work, as they fit into our class milestones.
+
+
+End of the week:
+
+* Friday day - Science fair and in-class demos.
+
+* Over the weekend - Relax!  It's WDI spring break.
+
+#####Daily deliverables:
+
+2-minute summary in the format of a "daily scrum" and including:
+
+* What happened yesterday?
+* Which user stories are to be completed today?
+* Any obstacles/blocks for today's stories?
+
+## Things to keep in mind
+Make sure that your code and files are:
+
+* In the proper places. Any business logic in views? Fat controllers?
+* DRY.  Can I reuse parts of the code in different areas of the project?
+* Well-commented. Will anyone else quickly understand what is going on in your controllers, models, etc?
+* Well-formatted. Write pretty code: indent properly, format consistently.
+* Adheres to the code formatting styles we've been presenting in class.
+
+Weâ€™ll also be looking at:
+
+* Quality of communication around decision-making. Can you defend why you chose a certain technology or why you implemented your solution in a certain way?
+* Your ability to pick up new technologies, research, and push yourself.
+
+###And most importantly...
+**Work on something you** ***like*** and
+#Have fun!
+
+
+
+-----------------------PROJECT 1------------------------
+You are going to corner the online gaming world with a new approach to old classics; starting with tic-tac-toe (a.k.a noughts and crosses).
+
+Your app will allow users to register and then start new games which they can play against a friend or the computer. They will be able to see a list of the previous games they have played, and a running score of wins/losses.

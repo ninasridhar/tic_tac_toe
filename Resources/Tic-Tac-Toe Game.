@@ -1,0 +1,11 @@
+Tic-Tac-Toe Game.
+
+Features to implement:
+  Functional tic tac toe game.
+  The ability to sign up, sign in and sign out. 
+  The ability to challenge either the computer or fellow users to a match. 
+  To be able to send an alert to a user if someone has challeneged them to a game or if someone has played a move.
+  To be able to store moves played on the database so that a user can sign in and view and resume incomplete matches.
+  The ability for a user to view all of their scores through their profile page.
+  Restricting access to games to the user logged on to play.
+  Restricting access to the tic tac toe game unless a player has signed up.
