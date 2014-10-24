@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   validates :password, presence: true, on: :create
   validates :email, presence: :true, uniqueness: {case_sensitive: false}
+  validates :username, presence: :true, uniqueness: {case_sensitive: true}
 
   has_many :games
   has_many :moves
